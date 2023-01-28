@@ -1,0 +1,236 @@
+{
+  "config": {
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/ismailelshafeiy/ismail /Practice_Playwright/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/ismailelshafeiy/ismail /Practice_Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/ismailelshafeiy/ismail /Practice_Playwright/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/ismailelshafeiy/ismail /Practice_Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/ismailelshafeiy/ismail /Practice_Playwright/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/ismailelshafeiy/ismail /Practice_Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "always",
+          "outputFolder": "reports/playwright-report"
+        }
+      ],
+      [
+        "/Users/ismailelshafeiy/ismail /Practice_Playwright/node_modules/allure-playwright/dist/index.js",
+        {
+          "outputFolder": "reports/allure-results",
+          "detail": true,
+          "suiteTitle": false
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/json-report/test-results.json"
+        }
+      ],
+      [
+        "/Users/ismailelshafeiy/ismail /Practice_Playwright/node_modules/monocart-reporter/lib/index.js",
+        {
+          "name": "Playwright Test Report",
+          "outputFile": "reports/monocart-report/report.html"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "configFile": "/Users/ismailelshafeiy/ismail /Practice_Playwright/playwright.config.ts",
+    "rootDir": "/Users/ismailelshafeiy/ismail /Practice_Playwright/tests",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.29.2",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "googleTest.spec.ts",
+      "file": "googleTest.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Story #1 - Validate Page Components",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "When I navigate to Google homepage",
+                      "duration": 1071
+                    },
+                    {
+                      "title": "Then the Page Title should be \"Google\"",
+                      "duration": 32
+                    },
+                    {
+                      "title": "And the Google logo should be displayed",
+                      "duration": 104
+                    }
+                  ],
+                  "startTime": "2023-01-24T15:25:48.976Z",
+                  "attachments": [
+                    {
+                      "name": "allure-metadata.json",
+                      "contentType": "application/vnd.allure.metadata+json",
+                      "body": "eyJsYWJlbHMiOlt7Im5hbWUiOiJmZWF0dXJlIiwidmFsdWUiOiJHb29nbGUgUE9DIEZlYXR1cmUifV19"
+                    },
+                    {
+                      "name": "allure-metadata.json",
+                      "contentType": "application/vnd.allure.metadata+json",
+                      "body": "eyJkZXNjcmlwdGlvbiI6IldoZW4gSSBuYXZpZ2F0ZSB0byBHb29nbGUgaG9tZXBhZ2UsIFRoZW4gdGhlIFBhZ2UgVGl0bGUgc2hvdWxkIGJlIFwiR29vZ2xlXCIsIEFuZCB0aGUgR29vZ2xlIExvZ28gc2hvdWxkIGJlIGRpc3BsYXllZC4ifQ=="
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/ismailelshafeiy/ismail /Practice_Playwright/reports/test-artifacts/googleTest-Story-1---Validate-Page-Components-chromium/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8aa27dfe5976005fe997-e9072f51954c7e48dee9",
+          "file": "googleTest.spec.ts",
+          "line": 10,
+          "column": 5
+        },
+        {
+          "title": "Story #2 - Validate Search Functionality",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 2120,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "When I navigate to Google homepage",
+                      "duration": 1043
+                    },
+                    {
+                      "title": "And search for \"Microsoft Playwright\"",
+                      "duration": 274
+                    },
+                    {
+                      "title": "Then \"Result Stats\" should not be empty",
+                      "duration": 392
+                    }
+                  ],
+                  "startTime": "2023-01-24T15:25:48.976Z",
+                  "attachments": [
+                    {
+                      "name": "allure-metadata.json",
+                      "contentType": "application/vnd.allure.metadata+json",
+                      "body": "eyJsYWJlbHMiOlt7Im5hbWUiOiJmZWF0dXJlIiwidmFsdWUiOiJHb29nbGUgUE9DIEZlYXR1cmUifV19"
+                    },
+                    {
+                      "name": "allure-metadata.json",
+                      "contentType": "application/vnd.allure.metadata+json",
+                      "body": "eyJkZXNjcmlwdGlvbiI6IldoZW4gSSBuYXZpZ2F0ZSB0byBHb29nbGUgaG9tZXBhZ2UsIEFuZCBzZWFyY2ggZm9yIFwiTWljcm9zb2Z0IFBsYXl3cmlnaHRcIiwgVGhlbiBcIlJlc3VsdCBTdGF0c1wiIHNob3VsZCBub3QgYmUgZW1wdHkuIn0="
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/ismailelshafeiy/ismail /Practice_Playwright/reports/test-artifacts/googleTest-Story-2---Validate-Search-Functionality-chromium/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8aa27dfe5976005fe997-5380d1381cfd27a3465f",
+          "file": "googleTest.spec.ts",
+          "line": 28,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

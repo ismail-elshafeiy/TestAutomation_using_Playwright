@@ -1,0 +1,336 @@
+{
+    "columns": [
+        {
+            "id": "ok",
+            "name": "",
+            "width": 36,
+            "sortable": false,
+            "align": "center",
+            "formatter": "caseIcon"
+        },
+        {
+            "id": "title",
+            "name": "Title",
+            "width": 300,
+            "maxWidth": 1230
+        },
+        {
+            "id": "type",
+            "name": "Type",
+            "width": 60,
+            "sortable": false,
+            "align": "center"
+        },
+        {
+            "id": "duration",
+            "name": "Duration",
+            "align": "right",
+            "sortAsc": false,
+            "formatter": "duration"
+        },
+        {
+            "id": "status",
+            "name": "Status",
+            "align": "center"
+        },
+        {
+            "id": "expectedStatus",
+            "name": "Expected",
+            "align": "center"
+        },
+        {
+            "id": "outcome",
+            "name": "Outcome",
+            "align": "center",
+            "width": 85
+        },
+        {
+            "id": "retry",
+            "name": "Retry",
+            "align": "center",
+            "width": 50
+        },
+        {
+            "id": "annotations",
+            "name": "Annotations",
+            "width": 100,
+            "align": "center",
+            "formatter": "annotations"
+        },
+        {
+            "id": "errors",
+            "name": "Errors",
+            "width": 60,
+            "align": "center",
+            "formatter": "errors"
+        },
+        {
+            "id": "logs",
+            "name": "Logs",
+            "width": 60,
+            "align": "center",
+            "formatter": "logs"
+        },
+        {
+            "id": "attachments",
+            "name": "Attachments",
+            "width": 100,
+            "align": "center",
+            "formatter": "attachments"
+        },
+        {
+            "id": "location",
+            "name": "Location",
+            "classMap": "mcr-location",
+            "width": 200
+        }
+    ],
+    "rows": [
+        {
+            "title": "chromium",
+            "type": "suite",
+            "tests": 2,
+            "subs": [
+                {
+                    "title": "googleTest.spec.ts",
+                    "type": "suite",
+                    "tests": 2,
+                    "subs": [
+                        {
+                            "title": "Story #1 - Validate Page Components",
+                            "type": "case",
+                            "ok": true,
+                            "outcome": "expected",
+                            "expectedStatus": "passed",
+                            "location": "tests/googleTest.spec.ts:10:5",
+                            "annotations": [],
+                            "timeout": 30000,
+                            "attachments": [
+                                {
+                                    "name": "allure-metadata.json",
+                                    "contentType": "application/vnd.allure.metadata+json"
+                                },
+                                {
+                                    "name": "allure-metadata.json",
+                                    "contentType": "application/vnd.allure.metadata+json"
+                                },
+                                {
+                                    "name": "trace",
+                                    "path": "../test-artifacts/googleTest-Story-1---Validate-Page-Components-chromium/trace.zip",
+                                    "contentType": "application/zip"
+                                }
+                            ],
+                            "duration": 1550,
+                            "retry": 0,
+                            "status": "passed",
+                            "subs": [
+                                {
+                                    "title": "Before Hooks",
+                                    "type": "step",
+                                    "status": "hook",
+                                    "duration": 546,
+                                    "location": "",
+                                    "subs": [
+                                        {
+                                            "title": "browserContext.newPage",
+                                            "type": "step",
+                                            "status": "pw:api",
+                                            "duration": 213,
+                                            "location": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "When I navigate to Google homepage",
+                                    "type": "step",
+                                    "status": "test.step",
+                                    "duration": 1071,
+                                    "location": "tests/googleTest.spec.ts:15:16",
+                                    "subs": [
+                                        {
+                                            "title": "page.goto(https://www.google.com/ncr)",
+                                            "type": "step",
+                                            "status": "pw:api",
+                                            "duration": 1069,
+                                            "location": "pages/google/home.ts:17:21"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Then the Page Title should be \"Google\"",
+                                    "type": "step",
+                                    "status": "test.step",
+                                    "duration": 32,
+                                    "location": "tests/googleTest.spec.ts:19:16",
+                                    "subs": [
+                                        {
+                                            "title": "expect.toHaveTitle",
+                                            "type": "step",
+                                            "status": "expect",
+                                            "duration": 31,
+                                            "location": "pages/google/home.ts:25:29"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "And the Google logo should be displayed",
+                                    "type": "step",
+                                    "status": "test.step",
+                                    "duration": 104,
+                                    "location": "tests/googleTest.spec.ts:23:16",
+                                    "subs": [
+                                        {
+                                            "title": "expect.toHaveScreenshot(Story-1---Validate-Page-Components-1.png)",
+                                            "type": "step",
+                                            "status": "expect",
+                                            "duration": 104,
+                                            "location": "pages/google/home.ts:21:40"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "After Hooks",
+                                    "type": "step",
+                                    "status": "hook",
+                                    "duration": 101,
+                                    "location": "",
+                                    "subs": [
+                                        {
+                                            "title": "browserContext.close",
+                                            "type": "step",
+                                            "status": "pw:api",
+                                            "duration": 6,
+                                            "location": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Story #2 - Validate Search Functionality",
+                            "type": "case",
+                            "ok": true,
+                            "outcome": "expected",
+                            "expectedStatus": "passed",
+                            "location": "tests/googleTest.spec.ts:28:5",
+                            "annotations": [],
+                            "timeout": 30000,
+                            "attachments": [
+                                {
+                                    "name": "allure-metadata.json",
+                                    "contentType": "application/vnd.allure.metadata+json"
+                                },
+                                {
+                                    "name": "allure-metadata.json",
+                                    "contentType": "application/vnd.allure.metadata+json"
+                                },
+                                {
+                                    "name": "trace",
+                                    "path": "../test-artifacts/googleTest-Story-2---Validate-Search-Functionality-chromium/trace.zip",
+                                    "contentType": "application/zip"
+                                }
+                            ],
+                            "duration": 2120,
+                            "retry": 0,
+                            "status": "passed",
+                            "subs": [
+                                {
+                                    "title": "Before Hooks",
+                                    "type": "step",
+                                    "status": "hook",
+                                    "duration": 546,
+                                    "location": "",
+                                    "subs": [
+                                        {
+                                            "title": "browserContext.newPage",
+                                            "type": "step",
+                                            "status": "pw:api",
+                                            "duration": 212,
+                                            "location": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "When I navigate to Google homepage",
+                                    "type": "step",
+                                    "status": "test.step",
+                                    "duration": 1043,
+                                    "location": "tests/googleTest.spec.ts:33:16",
+                                    "subs": [
+                                        {
+                                            "title": "page.goto(https://www.google.com/ncr)",
+                                            "type": "step",
+                                            "status": "pw:api",
+                                            "duration": 1041,
+                                            "location": "pages/google/home.ts:17:21"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "And search for \"Microsoft Playwright\"",
+                                    "type": "step",
+                                    "status": "test.step",
+                                    "duration": 274,
+                                    "location": "tests/googleTest.spec.ts:37:16",
+                                    "subs": [
+                                        {
+                                            "title": "locator.type(input[name=\"q\"], Microsoft Playwright)",
+                                            "type": "step",
+                                            "status": "pw:api",
+                                            "duration": 79,
+                                            "location": "pages/google/home.ts:29:26"
+                                        },
+                                        {
+                                            "title": "locator.press(input[name=\"q\"], Enter)",
+                                            "type": "step",
+                                            "status": "pw:api",
+                                            "duration": 193,
+                                            "location": "pages/google/home.ts:30:26"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Then \"Result Stats\" should not be empty",
+                                    "type": "step",
+                                    "status": "test.step",
+                                    "duration": 392,
+                                    "location": "tests/googleTest.spec.ts:42:16",
+                                    "subs": [
+                                        {
+                                            "title": "expect.not.toHaveText",
+                                            "type": "step",
+                                            "status": "expect",
+                                            "duration": 390,
+                                            "location": "pages/google/results.ts:13:45"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "After Hooks",
+                                    "type": "step",
+                                    "status": "hook",
+                                    "duration": 168,
+                                    "location": "",
+                                    "subs": [
+                                        {
+                                            "title": "browserContext.close",
+                                            "type": "step",
+                                            "status": "pw:api",
+                                            "duration": 4,
+                                            "location": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "location": "tests/googleTest.spec.ts:0:0"
+                }
+            ]
+        }
+    ],
+    "errors": [],
+    "name": "Playwright Test Report",
+    "date": 1674573951442,
+    "version": "1.29.2"
+}
