@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { allure } from "allure-playwright";
 import { GoogleHomePage } from "../../pages/google/home";
 import { GoogleResultsPage } from '../../pages/google/results';
-import testData from '../../testData/google.json';
+import testData from '../../testData/google.json'
 // page is a Playwright Page object like driver
 // context is a window object
 // provide page and context to the test to be isolated

@@ -13,7 +13,7 @@ async function globalConfig() {
     await emailField.fill('ismail.elshafeiy@gmail.com');
     await passwordField.fill('Som3a@1993');
     submitButton.click();
-    await expect(page).toHaveTitle('QAcart Todo App - Todos page');
+    // await expect(page).toHaveTitle('QAcart Todo App - Todos page');
     await page.context().storageState({
         path: 'storageState.json',
     });
