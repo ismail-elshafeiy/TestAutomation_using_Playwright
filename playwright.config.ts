@@ -11,6 +11,7 @@ import { devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
+  globalSetup: require.resolve('./utils/global-config.ts'),
   testDir: './tests',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
@@ -22,7 +23,7 @@ const config: PlaywrightTestConfig = {
     timeout: 5000
   },
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -32,17 +33,18 @@ const config: PlaywrightTestConfig = {
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
-  
+
   reporter: [
     ['list'],
-    ['html', { open: 'always' , outputFolder: 'reports/playwright-report' }],
+    // open : always, on-first-retry, on-first-failure, nevernpx playwright show-report
+    ['html', { open: 'always', outputFolder: 'reports/playwright-report' }],
     ['allure-playwright', {
       outputFolder: 'reports/allure-results',
       detail: true,
       suiteTitle: false
-     }],
-    ['json', {  outputFile: 'reports/json-report/test-results.json' }],
-    ['monocart-reporter', {  
+    }],
+    ['json', { outputFile: 'reports/json-report/test-results.json' }],
+    ['monocart-reporter', {
       name: "Playwright Test Report",
       //the dir relative process.cwd
       outputFile: 'reports/monocart-report/report.html'
@@ -52,11 +54,12 @@ const config: PlaywrightTestConfig = {
   use: {
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
-    headless: true,
+    baseURL: 'https://www.google.com/ncr',
+    headless: false,
     viewport: { width: 1920, height: 1080 },
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
+    // off, on , on-first-retry , retain-on-failure'
     video: 'on-first-retry',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
@@ -69,22 +72,26 @@ const config: PlaywrightTestConfig = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        launchOptions: {
+          args: ["--start-maximized"]
+        }
       },
+
     },
 
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-      },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //   },
+    // },
 
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-      },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {

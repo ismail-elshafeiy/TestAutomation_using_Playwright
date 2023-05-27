@@ -4,11 +4,12 @@ export class GoogleHomePage {
   readonly page: Page;
   readonly url = 'https://www.google.com/ncr';
   readonly googleLogoImage: Locator;
-  readonly searchBar : Locator;
+  readonly searchBar: Locator;
+
 
   constructor(page: Page) {
     this.page = page;
-      // https://playwright.dev/docs/selectors
+    // https://playwright.dev/docs/selectors
     this.googleLogoImage = page.locator('img[alt="Google"]');
     this.searchBar = page.locator('input[name="q"]');
   }
@@ -21,11 +22,12 @@ export class GoogleHomePage {
     await expect(this.googleLogoImage).toHaveScreenshot();
   }
 
-  async expectPageTitleToBeCorrect(){
+  async expectPageTitleToBeCorrect() {
     await expect(this.page).toHaveTitle('Google');
+
   }
 
-  async searchFor(query : string){
+  async searchFor(query: string) {
     await this.searchBar.type(query);
     await this.searchBar.press('Enter');
   }
