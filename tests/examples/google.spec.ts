@@ -1,22 +1,16 @@
-import { test } from '@playwright/test';
+import test from '@lib/BaseClass';
 import { allure } from "allure-playwright";
-import { GoogleHomePage } from "../../pages/google/home";
-import { GoogleResultsPage } from '../../pages/google/results';
-import testData from '../../testData/google.json'
 // page is a Playwright Page object like driver
 // context is a window object
 // provide page and context to the test to be isolated
 
 
-test('Story #1 - Validate Page Components', async ({ page, context }) => {
+test('@Smoke Story #1 - Validate Page Components', async ({ googleHomePage }) => {
     allure.feature('Google POC Feature');
     allure.description('When I navigate to Google homepage, Then the Page Title should be "Google", And the Google Logo should be displayed.');
-
-    const googleHomePage = new GoogleHomePage(page);
     await test.step('When I navigate to Google homepage', async () => {
         await googleHomePage.goto();
     });
-
     await test.step('Then the Page Title should be "Google"', async () => {
         await googleHomePage.expectPageTitleToBeCorrect();
     });
@@ -26,22 +20,17 @@ test('Story #1 - Validate Page Components', async ({ page, context }) => {
     });
 });
 
-test('Story #2 - Validate Search Functionality', async ({ page, context }) => {
+test('@Smoke Story #2 - Validate Search Functionality', async ({ googleHomePage, resultsPage}) => {
     allure.feature('Google POC Feature');
     allure.description('When I navigate to Google homepage, And search for "Microsoft Playwright", Then "Result Stats" should not be empty.');
-
-    const googleHomePage = new GoogleHomePage(page);
     await test.step('When I navigate to Google homepage', async () => {
         await googleHomePage.goto();
     });
-
     await test.step('And search for "Microsoft Playwright"', async () => {
-        await googleHomePage.searchFor(testData.google.search.query);
+        await googleHomePage.searchFor('Microsfot Playwright');
     });
-
-    const googleResultsPage = new GoogleResultsPage(page);
     await test.step('Then "Result Stats" should not be empty', async () => {
-        await googleResultsPage.expectResultStatsToBeNotEmpty();
+        await resultsPage.expectResultStatsToBeNotEmpty();
     });
 
 });

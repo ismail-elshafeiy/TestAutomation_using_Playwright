@@ -4,6 +4,7 @@ test('Working with Checkboxes', async ({ page }) => {
 
     await page.goto('https://the-internet.herokuapp.com/checkboxes')
 
+
     //Assert that the checkboxes are visible on the webpage
     await expect(page.locator('#checkboxes')).toBeVisible()
 

@@ -1,11 +1,14 @@
-import { expect, Locator, Page } from '@playwright/test';
+import { BrowserContext, expect, Locator, Page } from '@playwright/test';
 
-export class GoogleResultsPage {
+export class ResultsPage {
   readonly page: Page;
+  readonly context: BrowserContext;
   readonly resultStatsLabel: Locator;
 
-  constructor(page: Page) {
+  constructor(page: Page, context: BrowserContext) {
     this.page = page;
+    this.context = context;
+
     this.resultStatsLabel = page.locator('div#result-stats');
   }
 

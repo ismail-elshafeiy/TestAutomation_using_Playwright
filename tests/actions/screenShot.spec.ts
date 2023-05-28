@@ -4,17 +4,17 @@ test.describe('Example to demonstrate File Upload in Playwright', () => {
 
     test('Capture screenshot of the visible window', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/')
-        await page.screenshot({ path: 'screenshot/visibleWindow.png' });
+        await page.screenshot({ path: 'utils/screenshot/visibleWindow.png' });
     })
 
     test('Capture screenshot of the entire scrollable webpage', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/')
-        await page.screenshot({ path: 'screenshot/fullPage.png', fullPage: true });
+        await page.screenshot({ path: 'utils/screenshot/fullPage.png', fullPage: true });
     })
 
     test('Capture screenshot of an element', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/dropdown')
-        await page.locator('#dropdown').screenshot({ path: 'screenshot/elementScreenshot.png' });
+        await page.locator('#dropdown').screenshot({ path: 'utils/screenshot/elementScreenshot.png' });
     })
 
     test('Automatically Capture screenshot when Test Fails ', async ({ page }) => {

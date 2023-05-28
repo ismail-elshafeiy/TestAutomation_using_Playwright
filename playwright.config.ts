@@ -1,5 +1,7 @@
-import type { PlaywrightTestConfig } from '@playwright/test';
-import { devices } from '@playwright/test';
+import type { PlaywrightTestConfig, devices } from '@playwright/test';
+import { testConfig } from './utils/config/test-config';
+
+const ENV = 'https://the-internet.herokuapp.com/'
 
 /**
  * Read environment variables from file.
@@ -9,8 +11,8 @@ import { devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  globalSetup: require.resolve('./src/utils/global-config.ts'),
-  testDir: './src/tests',
+  globalSetup: require.resolve('./utils/config/global-config.ts'),
+  testDir: './tests',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -26,22 +28,28 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
-  retries: 2,
+  retries: 1,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
 
   reporter: [
+    [`./lib/CustomReporter.ts`],
     ['list'],
     // open : always, on-first-retry, on-first-failure, nevernpx playwright show-report
-    ['html', { open: 'always', outputFolder: 'reports/playwright-report' }],
+    ['html', {
+      open: 'always',
+      outputFolder: 'reports/playwright-report'
+    }],
     ['allure-playwright', {
       outputFolder: 'reports/allure-results',
       detail: true,
       suiteTitle: false
     }],
-    ['json', { outputFile: 'reports/json-report/test-results.json' }],
+    ['json', {
+      outputFile: 'reports/json-report/test-results.json'
+    }],
     ['monocart-reporter', {
       name: "Playwright Test Report",
       //the dir relative process.cwd
@@ -52,82 +60,113 @@ const config: PlaywrightTestConfig = {
   use: {
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://www.google.com/ncr',
+    baseURL: ENV,
     headless: false,
-    viewport: { width: 1920, height: 1080 },
+    viewport: { width: 1920, height: 800 },
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
     // off, on , on-first-retry , retain-on-failure'
-    video: 'on-first-retry',
-
+    video: `retain-on-failure`,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
+    trace: `retain-on-failure`
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: `Chrome`,
       use: {
-        ...devices['Desktop Chrome'],
+        // Configure the browser to use.
+        browserName: `chromium`,
+
+        //Chrome Browser Config
+        channel: `chrome`,
+        //Slows down execution by ms
         launchOptions: {
-          args: ["--start-maximized"]
+          slowMo: 0
         }
       },
-
     },
-
     // {
-    //   name: 'firefox',
+    //   name: `Chromium`,
     //   use: {
-    //     ...devices['Desktop Firefox'],
+    //     browserName: `chromium`,
+    //     baseURL: testConfig[process.env.ENV],
+    //     headless: true,
+    //     viewport: { width: 1500, height: 730 },
+    //     ignoreHTTPSErrors: true,
+    //     acceptDownloads: true,
+    //     screenshot: `only-on-failure`,
+    //     video: `retain-on-failure`,
+    //     trace: `retain-on-failure`,
+    //     launchOptions: {
+    //       slowMo: 0
+    //     }
     //   },
     // },
 
     // {
-    //   name: 'webkit',
+    //   name: `Firefox`,
     //   use: {
-    //     ...devices['Desktop Safari'],
+    //     browserName: `firefox`,
+    //     baseURL: testConfig[process.env.ENV],
+    //     headless: true,
+    //     viewport: { width: 1500, height: 730 },
+    //     ignoreHTTPSErrors: true,
+    //     acceptDownloads: true,
+    //     screenshot: `only-on-failure`,
+    //     video: `retain-on-failure`,
+    //     trace: `retain-on-failure`,
+    //     launchOptions: {
+    //       slowMo: 0
+    //     }
     //   },
     // },
 
-    /* Test against mobile viewports. */
     // {
-    //   name: 'Mobile Chrome',
+    //   name: `Edge`,
     //   use: {
-    //     ...devices['Pixel 5'],
+    //     browserName: `chromium`,
+    //     channel: `msedge`,
+    //     baseURL: testConfig[process.env.ENV],
+    //     headless: false,
+    //     viewport: { width: 1500, height: 730 },
+    //     ignoreHTTPSErrors: true,
+    //     acceptDownloads: true,
+    //     screenshot: `only-on-failure`,
+    //     video: `retain-on-failure`,
+    //     trace: `retain-on-failure`,
+    //     launchOptions: {
+    //       slowMo: 0
+    //     }
     //   },
     // },
     // {
-    //   name: 'Mobile Safari',
+    //   name: `WebKit`,
     //   use: {
-    //     ...devices['iPhone 12'],
+    //     browserName: `webkit`,
+    //     baseURL: testConfig[process.env.ENV],
+    //     headless: true,
+    //     viewport: { width: 1500, height: 730 },
+    //     ignoreHTTPSErrors: true,
+    //     acceptDownloads: true,
+    //     screenshot: `only-on-failure`,
+    //     video: `retain-on-failure`,
+    //     trace: `retain-on-failure`,
+    //     launchOptions: {
+    //       slowMo: 0
+    //     }
     //   },
     // },
 
-    /* Test against branded browsers. */
     // {
-    //   name: 'Microsoft Edge',
+    //   name: `API`,
     //   use: {
-    //     channel: 'msedge',
-    //   },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: {
-    //     channel: 'chrome',
-    //   },
-    // },
+    //     baseURL: testConfig[process.env.ENV]
+    //   }
+    // }
   ],
-
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   outputDir: 'reports/test-artifacts/',
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   port: 3000,
-  // },
 };
-
 export default config;
