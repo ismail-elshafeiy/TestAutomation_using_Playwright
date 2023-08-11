@@ -1,7 +1,7 @@
 import type { PlaywrightTestConfig, devices } from '@playwright/test';
 import { testConfig } from './utils/config/test-config';
 
-const ENV = 'https://the-internet.herokuapp.com/'
+const ENV = 'https://www.my.dentope.com/';
 
 /**
  * Read environment variables from file.
@@ -52,7 +52,6 @@ const config: PlaywrightTestConfig = {
     }],
     ['monocart-reporter', {
       name: "Playwright Test Report",
-      //the dir relative process.cwd
       outputFile: 'reports/monocart-report/report.html'
     }]
   ],
@@ -62,7 +61,7 @@ const config: PlaywrightTestConfig = {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: ENV,
     headless: false,
-    viewport: { width: 1920, height: 800 },
+    viewport: { width: 1280, height: 800 },
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
     // off, on , on-first-retry , retain-on-failure'

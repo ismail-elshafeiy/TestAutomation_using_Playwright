@@ -5,31 +5,21 @@
     <details open="open">
         <summary class="normal">Table of Contents</summary>
         <h5>
-          <ol>
-            <li>
-              <a href="#about-the-project">About the Project</a>
-              <ul>
-                <li><a href="#technology">Built With</a>
-              </ul>
-            </li>
-            <li>
-              <a href="#getting-started">Getting Started</a>
-              <ul>
-                <li><a href="#prerequisites">Prerequisites</a>
-                <li><a href="#installation">Installation</a>
-              </ul>
-            </li>
-            <li><a href="#usage">Usage</a></li>
-            <li><a href="#reports">Reports</a></li>
-            <li><a href="#lighthouse">Lighthouse</a></li>
-          </ol>
+            <li> <a href="#about-the-project">About the Project</a> </li>
+            <li> <a href="#technologies">Technology</a> </li>
+            <li> <a href="#prerequisites">Prerequisites</a> </li>
+            <li> <a href="#installation">Installation</a> </li>
+            <li> <a href="#using-inspector">Using Inspector</a> </li>
+            <li> <a href="#command-lines">Command lines</a> </li>
+            <li> <a href="#allure-report">Allure Report</a> </li>
         </h5>    
     </details>
 </h2>
 
-<!-- ABOUT THE PROJECT -->
+<!-- Technologies -->
 
-### Built With
+## Technologies
+---
 
 - [Playwright](https://playwright.dev)
 - [Typescript](https://www.typescriptlang.org/)
@@ -38,28 +28,46 @@
 - [ESLint](https://eslint.org/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 - [pdfjs-dist-es5](https://www.npmjs.com/package/pdfjs-dist-es5)
+- [allure-playwright](https://www.npmjs.com/package/allure-playwright)
+- [allure-commandline](https://www.npmjs.com/package/allure-commandline)
 
-### Prerequisites
+## Prerequisites
+---
 
 You need the following prerequisites installed on your device to be able to run and contribute to this project:
 
 1. Git -> [Download Git](https://git-scm.com/downloads) or [Download GitHub Desktop](https://desktop.github.com/)
 2. Visual Studio Code -> [Download VSCode](https://code.visualstudio.com/download)
 3. NodeJS -> [Download NodeJS](https://nodejs.org/en/download/)
-4. Playwright -> [Installing Playwright for VS Code](https://playwright.dev/docs/getting-started-vscode)
+4. Getting start from the [Playwright docs](https://playwright.dev/docs/getting-started-vscode)
+4. Playwright marketplace-> [Installing Playwright test for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright)
 
 **Note:** Always make sure to download the latest stable version compatible with your OS and CPU architecture.
 
-### Installation
+## Installation
+---
 
 1. Clone the project using GitHub Dekstop.
-2. Ensure that you've installed the official Playwright VS Code plugin, and ran `npm install` in the project root directory.
+2. Ensure that you've installed the official Playwright VS Code plugin, and ran this Command line in the project root directory.
+```
+npm install
+``` 
+
 3. Open the project folder in VS Code by clicking `File > Open Folder...`.
-4. Open the terminal by clicking `npm init playwright@latest `
+4. Open the terminal by clicking and run this commnad line 
+```sh
+npm init playwright@latest 
+```
 
-## Inspector 
+## Using Inspector
+---
 
-For better inspector run this command `npx playwright codegen playwright.dev` and click on any element to inspect it.
+For better inspector run this command and click on any element to inspect it.
+```
+npx playwright codegen playwright.dev
+```
+
+## Command lines
 
 ---
 <br/>
@@ -70,10 +78,18 @@ For better inspector run this command `npx playwright codegen playwright.dev` an
     </summary>
 
  - Update packages 
-    ```bash
-    npm i
-    ```
+  ```
+  npm i
+  ```
 
+- Check Playwright Current Version
+  ```
+  npx @playwright/test --version
+  ```
+- Update Playwright to the latest version
+  ```
+ npm install @playwright/test@latest
+  ```
  - Running All tests run this command 
 
  ```bash
@@ -120,7 +136,10 @@ npx playwright show-trace path/trace.zip
   </details>
 </br>
 
+## Allure Report
+
 ---
+
 <br/>
   <details>
     <summary>

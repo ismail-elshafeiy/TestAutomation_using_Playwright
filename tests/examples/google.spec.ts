@@ -1,5 +1,7 @@
-import test from '@lib/BaseClass';
-import { allure } from "allure-playwright";
+import test  from '@lib/BaseClass';
+import testData from '..testData/google.json';
+import  { allure } from "allure-playwright";
+
 // page is a Playwright Page object like driver
 // context is a window object
 // provide page and context to the test to be isolated
