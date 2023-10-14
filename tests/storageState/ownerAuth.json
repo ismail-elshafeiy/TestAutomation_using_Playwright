@@ -1,0 +1,65 @@
+{
+  "cookies": [
+    {
+      "name": ".Nop.Antiforgery",
+      "value": "CfDJ8HiGbwPxPd1NmkkStZB1jMXKMa96TbTHdlS_XOiJgcg0QK4EyZRTjJlg5euVH2y1Ovbax11_G1N-aPTCnxCx5fUdGLt_yokUv6XScGJBXulCoQeJTyD6J-zcA6VRAa32gFqNgSN2ONJ3TtoRT1UduRg",
+      "domain": "demo.nopcommerce.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.863051003.1697234319",
+      "domain": ".nopcommerce.com",
+      "path": "/",
+      "expires": 1731794321.498357,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_SCT41TW89V",
+      "value": "GS1.1.1697234318.1.1.1697234321.0.0.0",
+      "domain": ".nopcommerce.com",
+      "path": "/",
+      "expires": 1731794321.575398,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": ".Nop.Authentication",
+      "value": "CfDJ8HiGbwPxPd1NmkkStZB1jMVtG0KxHnYDDV1BK9nVGgbHlHG5VwkvvC4tiIfYnRtr45uawgLpa11-VADEKNl8wpRQGzBNBn2T5a_717Dz0cdJtlmOGneEy8syh9ZUnFhHh4CQYe8dSnYGImX387TxY9HNzxSWQU7ksW2_uqfD3zo6MxyNaRWoMnzOo2wckralBPU2I1D-O6hCP2eicr2w3eBekHXakWMmLFITNMV5FEJ40dNE5Z_e4E7JEMQw2Vb10nw_xVfpU6kd0sLuL8q6SvSwy4IUA4Htf4aRcBHcs270PRvM4mn-kqoQI3fLqFdaRxeKxS7MjfFfGjiskLtlk5GXbIOki46scuPXdQWJ0508S7zCa2NvEqp-5ZuyG4BrIyaMwZb6yXSjialODEJnYmHD9sgtL9Y-6vEzJQRJVoi06qYyQfNSeSy7Cij1u_pemFX7X8cROhHa-NKvjfNKuiNPgnWnqUFn3NWzeQW9l5f-82v6pAbsrAz2ZJy0uJfnd9BNM9t9ZadTMaJ6IK2-q0wqtI70Lg6Uq0EkWlxS3AJcePNb2diLTruhKtuLeUvJEPFjzJizuUvMUGjAAJOZrPM",
+      "domain": "demo.nopcommerce.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": ".Nop.Customer",
+      "value": "d1b819c6-c535-4456-87bf-2dff277dc61d",
+      "domain": "demo.nopcommerce.com",
+      "path": "/",
+      "expires": 1728770322.343283,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": ".Nop.Culture",
+      "value": "c%3Den-US%7Cuic%3Den-US",
+      "domain": "demo.nopcommerce.com",
+      "path": "/",
+      "expires": 1728856722.343308,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

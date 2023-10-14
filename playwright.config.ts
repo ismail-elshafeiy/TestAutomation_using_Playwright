@@ -1,18 +1,26 @@
-import type { PlaywrightTestConfig, devices } from '@playwright/test';
-import { testConfig } from './utils/config/test-config';
+import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { testConfig } from './config';
 
-const ENV = 'https://www.my.dentope.com/';
-
+const ENV = "https://demo.nopcommerce.com/";
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
+// const ENV = process.env.ENV;
+// if (!ENV || ![`stg`, `prod`].includes(ENV)) {
+//   console.log(`Please provide a correct environment value like "npx cross-env ENV=stg|prod"`);
+//   process.exit();
+// }
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  globalSetup: require.resolve('./utils/config/global-config.ts'),
-  testDir: './tests',
+  //Global Setup to run before all tests
+  //globalSetup: `tests/config/global-config`,
+  //Global Teardown to run after all tests
+  globalTeardown: `./global-tearDown.ts`,
+  testDir: './',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -22,8 +30,7 @@ const config: PlaywrightTestConfig = {
      */
     timeout: 5000
   },
-  /* Run tests in files in parallel */
-  fullyParallel: false,
+
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -31,11 +38,26 @@ const config: PlaywrightTestConfig = {
   retries: 1,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
+  /* Run tests in files in parallel */
+  fullyParallel: false,
+  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  use: {
+    actionTimeout: 0,
+    /* Base URL to use in actions like `await page.goto('/')`. */
+    // baseURL: testConfig[process.env.ENV],
+    headless: false,
+    viewport: { width: 1500, height: 800 },
+    ignoreHTTPSErrors: true,
+    screenshot: 'only-on-failure',
+    // off, on , on-first-retry , retain-on-failure'
+    video: `on`,
+    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    trace: `on`
+  },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
-
   reporter: [
-    [`./lib/CustomReporter.ts`],
+    [`./src/lib/CustomReporter.ts`],
     ['list'],
     // open : always, on-first-retry, on-first-failure, nevernpx playwright show-report
     ['html', {
@@ -43,6 +65,7 @@ const config: PlaywrightTestConfig = {
       outputFolder: 'reports/playwright-report'
     }],
     ['allure-playwright', {
+      open: 'always',
       outputFolder: 'reports/allure-results',
       detail: true,
       suiteTitle: false
@@ -55,67 +78,65 @@ const config: PlaywrightTestConfig = {
       outputFile: 'reports/monocart-report/report.html'
     }]
   ],
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    actionTimeout: 0,
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: ENV,
-    headless: false,
-    viewport: { width: 1280, height: 800 },
-    ignoreHTTPSErrors: true,
-    screenshot: 'only-on-failure',
-    // off, on , on-first-retry , retain-on-failure'
-    video: `retain-on-failure`,
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: `retain-on-failure`
-  },
-
+  /* Folder for test artifacts such as screenshots, videos, traces, etc. */
+  outputDir: 'reports/test-artifacts/',
   /* Configure projects for major browsers */
   projects: [
+  //   {
+  //  name: 'Setup',
+  // testMatch: "global-setup.ts",
+  //   },
     {
       name: `Chrome`,
       use: {
         // Configure the browser to use.
         browserName: `chromium`,
-
+     //   storageState: testConfig.ownerAuth,
         //Chrome Browser Config
-        channel: `chrome`,
+     //   channel: `chrome`,
         //Slows down execution by ms
         launchOptions: {
           slowMo: 0
         }
       },
+     // dependencies: ['Setup']
     },
     // {
-    //   name: `Chromium`,
+    //   name: `Device`,
     //   use: {
+    //     // ...devices[`Pixel 4a (5G)`],
+    //     ...devices[`iPhone 11 Pro Max`],
     //     browserName: `chromium`,
-    //     baseURL: testConfig[process.env.ENV],
-    //     headless: true,
-    //     viewport: { width: 1500, height: 730 },
-    //     ignoreHTTPSErrors: true,
-    //     acceptDownloads: true,
-    //     screenshot: `only-on-failure`,
-    //     video: `retain-on-failure`,
-    //     trace: `retain-on-failure`,
+    //     storageState: testConfig.ownerAuth,
+    //     channel: `chrome`,
+    //     //Slows down execution by ms
     //     launchOptions: {
     //       slowMo: 0
     //     }
     //   },
+    //   dependencies: ['Setup']
+    // },
+    // {
+    //   name: `Chrome`,
+    //   use: {
+    //     // Configure the browser to use.
+    //     browserName: `chromium`,
+    //     storageState: testConfig.adminAuth,
+    //     //Chrome Browser Config
+    //     channel: `chrome`,
+    //     //Slows down execution by ms
+    //     launchOptions: {
+    //       slowMo: 0
+    //     }
+    //   },
+    //   dependencies: ['Setup']
     // },
 
     // {
-    //   name: `Firefox`,
+    //   name: `Chrome`,
     //   use: {
-    //     browserName: `firefox`,
-    //     baseURL: testConfig[process.env.ENV],
-    //     headless: true,
-    //     viewport: { width: 1500, height: 730 },
-    //     ignoreHTTPSErrors: true,
-    //     acceptDownloads: true,
-    //     screenshot: `only-on-failure`,
-    //     video: `retain-on-failure`,
-    //     trace: `retain-on-failure`,
+    //     browserName: `chromium`,
+    //     channel: `chrome`,
     //     launchOptions: {
     //       slowMo: 0
     //     }
@@ -165,7 +186,6 @@ const config: PlaywrightTestConfig = {
     //   }
     // }
   ],
-  /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: 'reports/test-artifacts/',
+
 };
 export default config;

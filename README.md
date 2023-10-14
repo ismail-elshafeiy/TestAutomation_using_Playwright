@@ -58,6 +58,20 @@ npm install
 ```sh
 npm init playwright@latest 
 ```
+## Updating Playwright
+---
+1. Updae Node JS
+```sh
+npm i
+```
+2. Update playwright
+```sh
+npm install -D @playwright/test@latest
+```
+3. Check version
+```sh
+npx playwright --version
+```
 
 ## Using Inspector
 ---
@@ -77,53 +91,53 @@ npx playwright codegen playwright.dev
       </strong>
     </summary>
 
- - Update packages 
-  ```
-  npm i
-  ```
+- Update packages 
+```
+npm i
+```
 
 - Check Playwright Current Version
-  ```
-  npx @playwright/test --version
-  ```
+```
+npx @playwright/test --version
+```
 - Update Playwright to the latest version
-  ```
- npm install @playwright/test@latest
-  ```
- - Running All tests run this command 
+```
+npm install @playwright/test@latest
+```
+- Running All tests run this command 
 
- ```bash
- npx playwright test
- ```
+```bash
+npx playwright test
+```
 
- - Running the tests in headless mode run this command 
- ```bash
-  npx playwright test --headed
-  ```
+- Running the tests in headless mode run this command 
+```bash
+npx playwright test --headed
+```
 
- - Running a single test run this command 
- ```bash 
- npx playwright test googleTest.spec.ts
- ```
- - Running a set of test run this command 
- ```bash  
- npx playwright tests/googleTests
- ```
+- Running a single test run this command 
+```bash 
+npx playwright test googleTest.spec.ts
+```
+- Running a set of test run this command 
+```bash  
+npx playwright tests/googleTests
+```
  - Generating the report run this command 
- ``` bash 
- npx playwright show-report reports/playwright-report
- ```
-  - Generate and serve a temporary allure report by running this command 
-  ```bash 
-  allure serve reports/allure-results
-  ```
- - Generate and open report by running this command to generate the report 
- ```bash 
- allure generate reports/allure-results -o allure-report --clean
- ```
+``` bash 
+npx playwright show-report reports/playwright-report
+```
+- Generate and serve a temporary allure report by running this command 
+```bash 
+allure serve reports/allure-results
+```
+- Generate and open report by running this command to generate the report 
+```bash 
+allure generate reports/allure-results -o allure-report --clean
+```
   and then this command to open the report 
- ```bash
-  allure open allure-report
+```bash
+allure open allure-report
  ```
 
 - Open the monocart-report -which provides a lightweight tree view for all your tests in a single file- by opening this file in your preferred browser `reports/monocart-report/report.html`.
@@ -168,4 +182,39 @@ npx allure generate ./allure-results --clean
 npx allure open ./allure-report
 ```
 </details>
-</br>      
+</br>  
+
+### 🔆 Project structure
+
+```
+📦 Test Automation using Playwright
+  ┣ 📂.github
+  ┃ ┗ 📂workflows
+  ┃ ┃ ┗ 📜CI.yml
+  ┣ 📂src
+  ┃ ┣ 📂lib
+  ┃ ┃ ┣ 📜ApiActions.ts
+  ┃ ┃ ┣ 📜BaseClas.ts
+  ┃ ┃ ┣ 📜CustomeReporter.ts
+  ┃ ┃ ┣ 📜DBActions.ts
+  ┃ ┃ ┣ 📜FakerData.ts
+  ┃ ┃ ┣ 📜FileActions.ts
+  ┃ ┃ ┣ 📜Helper.ts
+  ┃ ┃ ┣ 📜WebActions.ts
+  ┃ ┣ 📂pages
+  ┃ ┃ ┣ 📜googlePage.ts
+  ┃ ┃ ┗ 📜monocartPage.ts
+  ┣ 📂tests
+  ┣ 📂utils
+  ┃ ┣ 📂main
+  ┃ ┃ ┣ 📂java
+  ┃ ┃ ┃ ┗ 📂t
+  ┃ ┃ ┃ ┃ ┗ 📂com
+
+  ┣ 📜.gitignore
+  ┣ 📜package-lock.json
+  ┣ 📜package.json
+  ┣ 📜playwright.config.json
+  ┣ 📜README.md
+  ┗ 📜tsconfig.xml
+```

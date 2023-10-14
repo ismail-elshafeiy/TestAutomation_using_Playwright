@@ -1,0 +1,51 @@
+npm https://nodejs.org/en 
+npm is the world's largest Software Library (Registry), also a software Package Manager and Installer
+npm includes a CLI (Command Line Client) that can be used to download and install software
+All npm packages are defined in files called package.json.
+The content of package.json must be written in JSON.
+At least two fields must be present in the definition file: name and version.
+Sharing Your Software:
+If you want to share your own software in the npm registry, you can sign in at:
+https://www.npmjs.com
+
+
+TypeScript Is A Strongly Typed Programming Language That Builds On JavaScript
+TypeScript Developed And Maintained By Microsoft
+TypeScript Is JavaScript With Types
+Typescript Add Features To JavaScript Without Changing It
+
+## WHY WE NEED TYPESCRIPT ?
+    * Detect Errors Without Running The Code "Static Type Checking ==
+    * Analyze The Code As You Type
+    * Will Help You When You Write React, Vue, Angular Apps
+    * Gives You The Missing Features In JS Like "Interfaces, Generics, Decorators”
+
+## HOW TYPESCRIPT WORKS ?
+    * TypeScript Compiler Compile TS Code Into JavaScript Code "This Called Transpilation“”
+    * How About The New Features? Workaround
+
+## What to need to know as pre-requests
+    JavaScript consept, variables , Arrays , Objects , Functions , conditions
+
+## Steps to Install TypeScript 
+    * Install Nodejs
+    * Be Nodejs Its Installed Check From Terminal `node -v` 
+    * Install Typescript. `npm i -g typescript`
+    * Be Typescript Its Installed Check From Terminal `tsc -v`
+    * Create TS File
+    * Compile JS File
+    * Check TS Playground
+
+## Statically vs Dynamically Typed Languages
+    - Statically Typed Language Like [Rust, C, C++]
+        * Variables Types Are Static, Once You Declare It You Cannot Change
+        * Type Of A Variable Is Known At Compile Time "Do Type Checking At Compile-Time"
+        * Have Better Performance At Run-Time Due To Not Needing To Check Types Dynamically
+        * Error Detected earlier
+
+    Dynamically Typed Language Like [PHP, Python, JavaScript]
+        * Variables Types Are Dynamic, You Can Always Change It
+        * Type Checking At Execution-Time”
+        * Error Can Be Detected After Execution
+
+- init tsconfig.json file `tsc --init`
