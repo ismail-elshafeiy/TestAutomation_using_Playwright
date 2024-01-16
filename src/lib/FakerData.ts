@@ -36,5 +36,4 @@ export class FakerData {
         return faker.lorem.sentences(numberOfChar);
     }
 
-
 }

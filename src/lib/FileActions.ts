@@ -3,7 +3,6 @@ import * as CryptoJS from 'crypto-js';
 import type { Page } from '@playwright/test';
 import { BrowserContext, expect } from '@playwright/test';
 import { Workbook } from 'exceljs';
-import { testConfig } from '../utils/config/test-config';
 import * as pdfjslib from 'pdfjs-dist-es5';
 
 

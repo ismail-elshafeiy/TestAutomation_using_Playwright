@@ -7,7 +7,7 @@ const chromeLauncher = require('chrome-launcher');
   const options = { logLevel: 'info', output: 'html', onlyCategories: ['performance'], port: chrome.port };
 
   // Below configuration is for Desktop mode
-  const config = { extends: 'lighthouse:default', settings: { formFactor: 'desktop', screenEmulation: { mobile: false } } }
+  const config = { extends: 'lighthouse:default', settings: { formFactor: 'desktop',screenEmulation: { mobile: false },screen } }
   // Below configuration is for Mobile devices 
   // const config = { extends: 'lighthouse:default', settings: {formFactor: 'mobile', screenEmulation:{mobile:true}} }
 

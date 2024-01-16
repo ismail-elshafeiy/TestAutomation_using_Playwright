@@ -6,7 +6,7 @@ export class WebActions {
     readonly page: Page;
     readonly context: BrowserContext;
 
-    constructor(page: Page, context: BrowserContext) {
+    constructor(page: Page, context?: BrowserContext) {
         this.page = page;
         this.context = context;
     }
@@ -23,6 +23,7 @@ export class WebActions {
     }
 
     async fillInput(locator: Locator, InputValue: string) {
+        console.log(`Fill ${InputValue}`);
         await locator.fill(InputValue);
     }
 
@@ -74,13 +75,12 @@ export class WebActions {
 
     async encrypt(text:string) {
         const key = `SECRET`;
-        await console.log(`The text is ${text}`);
+        console.log(`The text is ${text}`);
         const cipher = CryptoJS.AES.encrypt('************', key);
-        await console.log(cipher.toString());
+         console.log(cipher.toString());
         return CryptoJS.AES.decrypt(text,key).toString(CryptoJS.enc.Utf8);
 
     }
-
 
     async decrypt(text:string) {
         const key = `SECRET`;
