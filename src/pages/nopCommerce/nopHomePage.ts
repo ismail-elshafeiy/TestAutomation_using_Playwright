@@ -1,6 +1,7 @@
 import { Page, Locator, BrowserContext, expect } from '@playwright/test';
+import { PageBase } from '../../lib/PageBase';
 
-export class NopHomePage {
+export class NopHomePage extends PageBase{
     readonly page: Page;
     readonly context: BrowserContext;
     readonly nopBaseUrl: 'https://demo.nopcommerce.com/';
@@ -15,6 +16,7 @@ export class NopHomePage {
 
 
     constructor(page: Page, context: BrowserContext) {
+        super(page);
         this.page = page;
         this.context = context;
         this.register_linktxt = page.locator('css=a.ico-register');
@@ -49,7 +51,7 @@ export class NopHomePage {
     }
     async searchForProduct(productName:string){
         await this.search_txtField.fill(productName);
-        await this.search_btn.click();
+        (await this.searchList(1)).click();
     }
 
 }

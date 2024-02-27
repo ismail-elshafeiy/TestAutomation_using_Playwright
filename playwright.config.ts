@@ -1,5 +1,5 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
-import { testConfig } from './config';
+import { PlaywrightTestConfig, devices } from "@playwright/test";
+import { testConfig } from "./config";
 
 const ENV = "https://demo.nopcommerce.com/";
 /**
@@ -20,7 +20,7 @@ const config: PlaywrightTestConfig = {
   //globalSetup: `tests/config/global-config`,
   //Global Teardown to run after all tests
   globalTeardown: `./global-tearDown.ts`,
-  testDir: './',
+  testDir: "./",
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -28,7 +28,7 @@ const config: PlaywrightTestConfig = {
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 5000
+    timeout: 5000,
   },
 
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -39,67 +39,79 @@ const config: PlaywrightTestConfig = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: testConfig[process.env.ENV],
-    headless: false,
+    headless: true,
     viewport: { width: 1500, height: 800 },
     ignoreHTTPSErrors: true,
-    screenshot: 'only-on-failure',
+    screenshot: "only-on-failure",
     // off, on , on-first-retry , retain-on-failure'
     video: `on`,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: `on`
+    trace: `on`,
   },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
   reporter: [
     [`./src/lib/CustomReporter.ts`],
-    ['list'],
+    ["list"],
     // open : always, on-first-retry, on-first-failure, nevernpx playwright show-report
-    ['html', {
-      open: 'always',
-      outputFolder: 'reports/playwright-report'
-    }],
-    ['allure-playwright', {
-      open: 'always',
-      outputFolder: 'reports/allure-results',
-      detail: true,
-      suiteTitle: false
-    }],
-    ['json', {
-      outputFile: 'reports/json-report/test-results.json'
-    }],
-    ['monocart-reporter', {
-      name: "Playwright Test Report",
-      outputFile: 'reports/monocart-report/report.html'
-    }]
+    [
+      "html",
+      {
+        open: "always",
+        outputFolder: "reports/playwright-report",
+      },
+    ],
+    [
+      "allure-playwright",
+      {
+        open: "always",
+        outputFolder: "reports/allure-results",
+        detail: true,
+        suiteTitle: false,
+      },
+    ],
+    [
+      "json",
+      {
+        outputFile: "reports/json-report/test-results.json",
+      },
+    ],
+    [
+      "monocart-reporter",
+      {
+        name: "Playwright Test Report",
+        outputFile: "reports/monocart-report/report.html",
+      },
+    ],
   ],
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: 'reports/test-artifacts/',
+  outputDir: "reports/test-artifacts/",
   /* Configure projects for major browsers */
   projects: [
-  //   {
-  //  name: 'Setup',
-  // testMatch: "global-setup.ts",
-  //   },
+    {
+      name: "Setup",
+      testMatch: "global-setup.ts",
+    },
     {
       name: `Chrome`,
       use: {
         // Configure the browser to use.
         browserName: `chromium`,
-     //   storageState: testConfig.ownerAuth,
+        storageState: testConfig.ownerAuth,
         //Chrome Browser Config
-     //   channel: `chrome`,
+        channel: `chrome`,
         //Slows down execution by ms
         launchOptions: {
-          slowMo: 0
-        }
+          slowMo: 0,
+        },
       },
-     // dependencies: ['Setup']
+      dependencies: ["Setup"],
     },
     // {
     //   name: `Device`,
@@ -186,6 +198,5 @@ const config: PlaywrightTestConfig = {
     //   }
     // }
   ],
-
 };
 export default config;

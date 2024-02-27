@@ -6,11 +6,13 @@ import { GoogleHomePage } from '@pages/google/googleHomePage';
 import { ResultsPage } from '@pages/google/resultsPage';
 import { HomePage } from '@pages/examples/homePage';
 import { TopMenuPage } from '@pages/examples/topMenuPage';
+
 import { NopHomePage } from '@pages/nopCommerce/nopHomePage';
 import { RegisterPage } from '@pages/nopCommerce/registerPage';
 import { LoginPage } from '@pages/nopCommerce/loginPage';
 import { MyAccountPage } from '@pages/nopCommerce/myAccount';
 import { ContactUsPage } from '@pages/nopCommerce/contactUsPage';
+import { ProductDetailsPage } from '@pages/nopCommerce/productDetails';
 
 
 
@@ -35,6 +37,7 @@ const test = baseClass.extend<{
     loginPage: LoginPage;
     myAccountPage: MyAccountPage;
     contactUsPage: ContactUsPage;
+    productDetailsPage: ProductDetailsPage;
 }>({
     webActions: async ({ page, context }, use) => {
         await use(new WebActions(page, context));
@@ -71,6 +74,9 @@ const test = baseClass.extend<{
     },
     contactUsPage: async ({ page, context }, use) => {
         await use(new ContactUsPage(page, context));
+    },
+    productDetailsPage: async ({ page, context }, use) => {
+        await use(new ProductDetailsPage(page, context));
     }
 })
 export default test;

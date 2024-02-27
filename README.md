@@ -18,7 +18,7 @@
 
 <!-- Technologies -->
 
-## Technologies
+## 🔆 Technologies
 ---
 
 - [Playwright](https://playwright.dev)
@@ -31,7 +31,7 @@
 - [allure-playwright](https://www.npmjs.com/package/allure-playwright)
 - [allure-commandline](https://www.npmjs.com/package/allure-commandline)
 
-## Prerequisites
+## 🔆 Prerequisites
 ---
 
 You need the following prerequisites installed on your device to be able to run and contribute to this project:
@@ -44,7 +44,7 @@ You need the following prerequisites installed on your device to be able to run 
 
 **Note:** Always make sure to download the latest stable version compatible with your OS and CPU architecture.
 
-## Installation
+## 🔆 Installation
 ---
 
 1. Clone the project using GitHub Dekstop.
@@ -58,7 +58,7 @@ npm install
 ```sh
 npm init playwright@latest 
 ```
-## Updating Playwright
+## 🔆 Updating Playwright
 ---
 1. Updae Node JS
 ```sh
@@ -73,7 +73,7 @@ npm install -D @playwright/test@latest
 npx playwright --version
 ```
 
-## Using Inspector
+## 🔆 Using Inspector
 ---
 
 For better inspector run this command and click on any element to inspect it.
@@ -81,7 +81,7 @@ For better inspector run this command and click on any element to inspect it.
 npx playwright codegen playwright.dev
 ```
 
-## Command lines
+## 🔆 Command lines
 
 ---
 <br/>
@@ -150,7 +150,7 @@ npx playwright show-trace path/trace.zip
   </details>
 </br>
 
-## Allure Report
+## 🔆 Allure Report
 
 ---
 
@@ -185,33 +185,51 @@ npx allure open ./allure-report
 </br>  
 
 ### 🔆 Project structure
+---
+
+<br/>
+  <details>
+    <summary>
+      <strong> 👉 Click here to see the project structure
+      </strong>
+    </summary>
 
 ```
 📦 Test Automation using Playwright
   ┣ 📂.github
   ┃ ┗ 📂workflows
   ┃ ┃ ┗ 📜CI.yml
+  ┣ 📂reports
+  ┃ ┣ 📂allure-results
+  ┃ ┣ 📂downloads
+  ┃ ┣ 📂lightHouse-report
+  ┃ ┣ 📂logd
+  ┃ ┣ 📂monocart-report
+  ┃ ┣ 📂playwright-report
+  ┃ ┣ 📂test-artifacts
   ┣ 📂src
   ┃ ┣ 📂lib
   ┃ ┃ ┣ 📜ApiActions.ts
-  ┃ ┃ ┣ 📜BaseClas.ts
+  ┃ ┃ ┣ 📜BaseFixtures.ts
   ┃ ┃ ┣ 📜CustomeReporter.ts
   ┃ ┃ ┣ 📜DBActions.ts
   ┃ ┃ ┣ 📜FakerData.ts
   ┃ ┃ ┣ 📜FileActions.ts
   ┃ ┃ ┣ 📜Helper.ts
+  ┃ ┃ ┣ 📜PageBase.ts
   ┃ ┃ ┣ 📜WebActions.ts
   ┃ ┣ 📂pages
-  ┃ ┃ ┣ 📜googlePage.ts
-  ┃ ┃ ┗ 📜monocartPage.ts
+  ┃ ┃ ┣ 📂examples
+  ┃ ┃ ┣ 📂google
+  ┃ ┃ ┣ 📂nopCommerce
   ┣ 📂tests
-  ┣ 📂utils
-  ┃ ┣ 📂main
-  ┃ ┃ ┣ 📂java
-  ┃ ┃ ┃ ┗ 📂t
-  ┃ ┃ ┃ ┃ ┗ 📂com
-
+  ┃ ┣ 📂data
+  ┃ ┣ 📂e2e
+  ┣ 📂typescript
   ┣ 📜.gitignore
+  ┣ 📜config.ts
+  ┣ 📜global-setup.js
+  ┣ 📜global-tearDown.js
   ┣ 📜package-lock.json
   ┣ 📜package.json
   ┣ 📜playwright.config.json

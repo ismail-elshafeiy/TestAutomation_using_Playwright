@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-const downloadFiles = 'reports/download/';
+import { testConfig } from 'config';
+const downloadFiles = testConfig.downloadFiles  ;
 
 test.describe('Example to demonstrate screenshot in Playwright', () => {
 

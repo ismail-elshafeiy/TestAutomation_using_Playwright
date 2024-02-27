@@ -1,11 +1,13 @@
 import { test, expect } from '@playwright/test';
+import { testConfig } from 'config';
+const downloadFiles = testConfig.downloadFiles  ;
 
 // https://playwright.dev/docs/downloads
 // https://playwright.dev/docs/input#upload-files
 
 const fs = require('fs')
 const uploadFilePath = 'tests/data/upload/';
-const downloadFiles = 'reports/download/';
+
 
 test.describe('Example to demonstrate execution Upload and Download single file methods in Playwright', () => {
     const fileName = 'Screenshot.png';

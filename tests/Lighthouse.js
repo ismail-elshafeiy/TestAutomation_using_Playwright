@@ -1,6 +1,9 @@
+import { testConfig } from "../config";
+
 const fs = require('fs');
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
+
 
 (async () => {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
@@ -15,7 +18,7 @@ const chromeLauncher = require('chrome-launcher');
 
   // `.report` is the HTML report as a string
   const reportHtml = runnerResult.report;
-  fs.writeFileSync('reports/lighthouse-report/LighthouseReport.html', reportHtml);
+  fs.writeFileSync(testConfig.lighthouse, reportHtml);
 
   // `.lhr` is the Lighthouse Result as a JS object
   console.log('Report is done for', runnerResult.lhr.finalUrl);
