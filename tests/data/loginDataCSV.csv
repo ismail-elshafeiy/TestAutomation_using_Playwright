@@ -1,0 +1,4 @@
+key,run,email,password,expected result,login successfully
+email1,yes,tomsmith,SuperSecretPassword!,You logged into a secure area!11,
+email2,no,tomsmith11,SuperSecretPassword!11,You logged into a secure area!12,
+email3,yes,tomsmith12,,You logged into a secure area!13,

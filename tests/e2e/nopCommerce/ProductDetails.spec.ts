@@ -9,10 +9,7 @@ test.afterEach("Close Browser", async ({ page }) => {
 });
 
 test.describe("Product Test Cases", () => {
-  test("@Smoke tc #1 - Verify that the guest can add product to cart", async ({
-    nopHomePage,
-    productDetailsPage,
-  }) => {
+  test("@Smoke tc #1 - Verify that the guest can add product to cart", async ({ nopHomePage, productDetailsPage }) => {
     allure.owner("Ismail elshafeiy");
     allure.epic("Product Module");
     allure.feature("Product Details");
@@ -30,9 +27,7 @@ test.describe("Product Test Cases", () => {
       await productDetailsPage.addProductToCart();
     });
     await test.step("Validate the success message", async () => {
-      await productDetailsPage.validateSuccessMessage(
-        "The product has been added to your shopping cart"
-      );
+      await productDetailsPage.validateSuccessMessage("The product has been added to your shopping cart");
     });
   });
 });

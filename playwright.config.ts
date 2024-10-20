@@ -1,4 +1,4 @@
-import { PlaywrightTestConfig, devices } from "@playwright/test";
+import { PlaywrightTestConfig } from "@playwright/test";
 import { testConfig } from "./config";
 
 const ENV = "https://demo.nopcommerce.com/";
@@ -19,7 +19,7 @@ const config: PlaywrightTestConfig = {
   //Global Setup to run before all tests
   //globalSetup: `tests/config/global-config`,
   //Global Teardown to run after all tests
-  globalTeardown: `./global-tearDown.ts`,
+ // globalTeardown: `./global-tearDown.ts`,
   testDir: "./",
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
@@ -35,7 +35,7 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
-  retries: 1,
+  retries: 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Run tests in files in parallel */
@@ -45,13 +45,12 @@ const config: PlaywrightTestConfig = {
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: testConfig[process.env.ENV],
-    headless: true,
+    testIdAttribute: "data-testid",
+    headless: false,
     viewport: { width: 1500, height: 800 },
     ignoreHTTPSErrors: true,
     screenshot: "only-on-failure",
-    // off, on , on-first-retry , retain-on-failure'
     video: `on`,
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: `on`,
   },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -59,7 +58,6 @@ const config: PlaywrightTestConfig = {
   reporter: [
     [`./src/lib/CustomReporter.ts`],
     ["list"],
-    // open : always, on-first-retry, on-first-failure, nevernpx playwright show-report
     [
       "html",
       {
@@ -74,6 +72,7 @@ const config: PlaywrightTestConfig = {
         outputFolder: "reports/allure-results",
         detail: true,
         suiteTitle: false,
+        disableWebdriverStepsReporting: true,
       },
     ],
     [
@@ -94,24 +93,22 @@ const config: PlaywrightTestConfig = {
   outputDir: "reports/test-artifacts/",
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: "Setup",
-      testMatch: "global-setup.ts",
-    },
+    // {
+    //   name: "Setup",
+    //   testMatch: "global-setup.ts",
+    // },
     {
       name: `Chrome`,
       use: {
-        // Configure the browser to use.
         browserName: `chromium`,
-        storageState: testConfig.ownerAuth,
-        //Chrome Browser Config
+   //     storageState: testConfig.ownerAuth,
         channel: `chrome`,
         //Slows down execution by ms
         launchOptions: {
           slowMo: 0,
         },
       },
-      dependencies: ["Setup"],
+    //  dependencies: ["Setup"],
     },
     // {
     //   name: `Device`,
