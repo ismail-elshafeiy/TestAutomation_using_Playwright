@@ -1,4 +1,3 @@
-
 /allure-report/
 /node_modules/
 /reports/
@@ -8,3 +7,6 @@
 /allure-results/
 storageState.json
 /playwright-report.zip
+.yarn/
+.yarnrc.yml
+yarn.lock
