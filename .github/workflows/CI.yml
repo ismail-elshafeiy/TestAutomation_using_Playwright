@@ -1,24 +1,41 @@
 name: Playwright Tests
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
+
+    # Cache node_modules to speed up subsequent runs
+    - name: Cache node_modules
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-modules-
+
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: lts/*  # Or specify a specific version like 18 or 20
+
     - name: Install dependencies
-      run: npm ci
+      run: npm ci  # Ensure your package.json and package-lock.json are in sync
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+
     - name: Run Playwright tests
       run: npx playwright test
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
