@@ -39,9 +39,9 @@
         "eslint-plugin-import": "^2.27.5",
         "exceljs": "^4.3.0",
         "i": "^0.3.7",
-        "lighthouse": "^9.6.8",
+        "lighthouse": "^12.2.2",
         "monocart-reporter": "^1.0.7",
-        "npm": "^9.6.4",
+        "npm": "^10.9.1",
         "pdfjs-dist-es5": "^2.13.216",
         "pg": "^8.10.0",
         "playwright-lighthouse": "2.2.2",
@@ -50,7 +50,7 @@
     },
     "devDependencies": {
         "@playwright/test": "^1.49.0",
-        "@wdio/cli": "^8.32.4",
+        "@wdio/cli": "^9.3.1",
         "typescript": "^5.2.2"
     },
     "packageManager": "yarn@4.5.0"
