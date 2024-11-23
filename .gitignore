@@ -9,4 +9,3 @@ storageState.json
 /playwright-report.zip
 .yarn/
 .yarnrc.yml
-yarn.lock
