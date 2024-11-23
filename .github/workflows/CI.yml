@@ -14,26 +14,21 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    # Cache node_modules to speed up subsequent runs
-    - name: Cache node_modules
-      uses: actions/cache@v3
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-modules-
+    - name: Install xvfb
+      run: sudo apt-get install -y xvfb
+
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*  # Or specify a specific version like 18 or 20
+        node-version: lts/*
 
     - name: Install dependencies
-      run: npm ci  # Ensure your package.json and package-lock.json are in sync
+      run: npm ci
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      run: npx playwright test
+      run: xvfb-run npx playwright test  # Run the tests with xvfb
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
