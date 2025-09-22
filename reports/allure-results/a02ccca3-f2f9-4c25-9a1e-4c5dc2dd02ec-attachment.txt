@@ -1,2 +1,0 @@
-Reading file [ tests/data/LoginData.xlsx ]
-Reading sheet [ login Data ]
