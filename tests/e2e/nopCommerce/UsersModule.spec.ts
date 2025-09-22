@@ -12,7 +12,11 @@ test.afterEach("Close Browser", async ({ page }) => {
   page.close();
 });
 test.describe("Register Test Cases", () => {
-  test("@Smoke tc #1 - Verify that the user can Register with required data", async ({ fakerData, nopHomePage, registerPage }) => {
+  test("@Smoke tc #1 - Verify that the user can Register with required data", async ({
+    fakerData,
+    nopHomePage,
+    registerPage,
+  }) => {
     allure.owner("Ismail elshafeiy");
     allure.epic("User Module");
     allure.feature("Register Module");
@@ -49,7 +53,11 @@ test.describe("Register Test Cases", () => {
       await registerPage.validateSuccessMessage("Your registration completed");
     });
   });
-  test("@Smoke tc #2 - Verify that the user can Register with all data", async ({ fakerData, nopHomePage, registerPage }) => {
+  test("@Smoke tc #2 - Verify that the user can Register with all data", async ({
+    fakerData,
+    nopHomePage,
+    registerPage,
+  }) => {
     allure.owner("Ismail elshafeiy");
     allure.epic("User Module");
     allure.feature("Register Module");
@@ -78,7 +86,10 @@ test.describe("Register Test Cases", () => {
   });
 });
 test.describe("Change password Test Cases", () => {
-  test("@Smoke tc #3 - Change Password", async ({ nopHomePage, myAccountPage }) => {
+  test("@Smoke tc #3 - Change Password", async ({
+    nopHomePage,
+    myAccountPage,
+  }) => {
     allure.owner("Ismail elshafeiy");
     allure.epic("User Module");
     allure.feature("Change Password");

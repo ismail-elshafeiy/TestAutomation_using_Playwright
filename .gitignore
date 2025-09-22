@@ -4,5 +4,6 @@
 /playwright-report/
 /playwright/.cache/
 /allure-results/
+/reports/
 storageState.json
 /playwright-report.zip

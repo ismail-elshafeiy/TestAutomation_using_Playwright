@@ -1,7 +1,23 @@
-import { PlaywrightTestConfig } from "@playwright/test";
-import { testConfig } from "./config";
+import { defineConfig, devices } from '@playwright/test';
+import { testConfig } from './config';
 
-const ENV = "https://demo.nopcommerce.com/";
+const RPconfig = {
+  apiKey: 'myKey_K4xCMQuGQkaYCQvAXZePoABVBg4aWz9VIQIY3OSZID4-w_KZHlS-pI8gE7oGPjIR',
+  endpoint: 'https://demo.reportportal.io/api/v1',
+  project: 'ismail-elshafeiy_personal',
+  launch: 'Test Launch',
+  attributes: [
+    {
+      key: 'key',
+      value: 'value',
+    },
+    {
+      value: 'value',
+    },
+  ],
+  description: 'Your launch description',
+};
+const ENV = 'https://demo.nopcommerce.com/';
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -15,12 +31,12 @@ const ENV = "https://demo.nopcommerce.com/";
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-const config: PlaywrightTestConfig = {
+export default defineConfig({
   //Global Setup to run before all tests
   //globalSetup: `tests/config/global-config`,
   //Global Teardown to run after all tests
- // globalTeardown: `./global-tearDown.ts`,
-  testDir: "./",
+  // globalTeardown: `./global-tearDown.ts`,
+  testDir: './',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -45,52 +61,53 @@ const config: PlaywrightTestConfig = {
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: testConfig[process.env.ENV],
-    testIdAttribute: "data-testid",
-    headless: false,
+    testIdAttribute: 'data-testid',
+    headless: true,
     viewport: { width: 1500, height: 800 },
     ignoreHTTPSErrors: true,
-    screenshot: "only-on-failure",
+    screenshot: 'only-on-failure',
     video: `on`,
     trace: `on`,
   },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
   reporter: [
+    ['@reportportal/agent-js-playwright', RPconfig],
     [`./src/lib/CustomReporter.ts`],
-    ["list"],
+    ['list'],
     [
-      "html",
+      'html',
       {
-        open: "always",
-        outputFolder: "reports/playwright-report",
+        open: 'always',
+        outputFolder: 'reports/playwright-report',
       },
     ],
     [
-      "allure-playwright",
+      'allure-playwright',
       {
-        open: "always",
-        outputFolder: "reports/allure-results",
+        open: 'always',
+        outputFolder: 'reports/allure-results',
         detail: true,
         suiteTitle: false,
         disableWebdriverStepsReporting: true,
       },
     ],
     [
-      "json",
+      'json',
       {
-        outputFile: "reports/json-report/test-results.json",
+        outputFile: 'reports/json-report/test-results.json',
       },
     ],
     [
-      "monocart-reporter",
+      'monocart-reporter',
       {
-        name: "Playwright Test Report",
-        outputFile: "reports/monocart-report/report.html",
+        name: 'Playwright Test Report',
+        outputFile: 'reports/monocart-report/report.html',
       },
     ],
   ],
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: "reports/test-artifacts/",
+  outputDir: 'reports/test-artifacts/',
   /* Configure projects for major browsers */
   projects: [
     // {
@@ -101,14 +118,14 @@ const config: PlaywrightTestConfig = {
       name: `Chrome`,
       use: {
         browserName: `chromium`,
-   //     storageState: testConfig.ownerAuth,
+        //     storageState: testConfig.ownerAuth,
         channel: `chrome`,
         //Slows down execution by ms
         launchOptions: {
           slowMo: 0,
         },
       },
-    //  dependencies: ["Setup"],
+      //  dependencies: ["Setup"],
     },
     // {
     //   name: `Device`,
@@ -195,5 +212,4 @@ const config: PlaywrightTestConfig = {
     //   }
     // }
   ],
-};
-export default config;
+});

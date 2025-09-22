@@ -36,19 +36,32 @@ jobs:
         name: playwright-report
         path: reports/playwright-report/
         retention-days: 30
-
-    - name: Deploy Playwright Report to GitHub Pages
-      if: ${{ always() }}
-      uses: peaceiris/actions-gh-pages@v3
+       
+    - name: Setup Pages
+      uses: actions/configure-pages@v2
+     
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: reports/playwright-report/index.html
+       # Upload entire repository
+       path: reports/playwright-report/
+      
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
+    
+    # - name: Deploy Playwright Report to GitHub Pages
+    #   if: ${{ always() }}
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: reports/playwright-report/index.html
 
-    - name: Notify Slack
-      if: always()  # Notify regardless of success or failure
-      uses: rtCamp/action-slack-notify@v2
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-      with:
-        status: ${{ job.status }}
-        job_name: Playwright Tests
+    # - name: Notify Slack
+    #   if: always()  # Notify regardless of success or failure
+    #   uses: rtCamp/action-slack-notify@v2
+    #   env:
+    #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+    #   with:
+    #     status: ${{ job.status }}
+    #     job_name: Playwright Tests

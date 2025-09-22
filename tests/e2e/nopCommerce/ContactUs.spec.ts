@@ -7,7 +7,11 @@ test.afterEach("Close Browser", async ({ page }) => {
   page.close();
 });
 
-test("@Regression tc #3 - Contact us", async ({ fakerData, nopHomePage, contactUsPage }) => {
+test("@Regression tc #3 - Contact us", async ({
+  fakerData,
+  nopHomePage,
+  contactUsPage,
+}) => {
   allure.owner("Ismail elshafeiy");
   allure.epic("User");
   allure.feature("Contact Us");
@@ -28,6 +32,8 @@ test("@Regression tc #3 - Contact us", async ({ fakerData, nopHomePage, contactU
     await contactUsPage.clickOnSubmitForm();
   });
   await test.step("Validate the success message", async () => {
-    await contactUsPage.verifySuccessMessage("Your enquiry has been successfully sent to the store owner.");
+    await contactUsPage.verifySuccessMessage(
+      "Your enquiry has been successfully sent to the store owner."
+    );
   });
 });

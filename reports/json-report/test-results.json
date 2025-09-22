@@ -16,6 +16,25 @@
     "preserveOutput": "always",
     "reporter": [
       [
+        "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/node_modules/@reportportal/agent-js-playwright/build/index.js",
+        {
+          "apiKey": "myKey_K4xCMQuGQkaYCQvAXZePoABVBg4aWz9VIQIY3OSZID4-w_KZHlS-pI8gE7oGPjIR",
+          "endpoint": "https://demo.reportportal.io/api/v1",
+          "project": "ismail-elshafeiy_personal",
+          "launch": "Test Launch",
+          "attributes": [
+            {
+              "key": "key",
+              "value": "value"
+            },
+            {
+              "value": "value"
+            }
+          ],
+          "description": "Your launch description"
+        }
+      ],
+      [
         "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/lib/CustomReporter.ts",
         null
       ],
@@ -56,7 +75,7 @@
     ],
     "reportSlowTests": {
       "max": 5,
-      "threshold": 15000
+      "threshold": 300000
     },
     "quiet": false,
     "projects": [
@@ -64,7 +83,9 @@
         "outputDir": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 4
+        },
         "id": "Chrome",
         "name": "Chrome",
         "testDir": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright",
@@ -77,7 +98,8 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "version": "1.49.0",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
     "workers": 4,
     "webServer": null
   },
@@ -109,13 +131,15 @@
                   "results": [
                     {
                       "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5170,
+                      "duration": 3390,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:47.420Z",
+                      "startTime": "2025-09-16T22:42:23.646Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -140,7 +164,7 @@
             },
             {
               "title": "Handling JS Confirm - Validate Confirm Text and Click OK",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -152,13 +176,34 @@
                   "results": [
                     {
                       "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 4443,
-                      "errors": [],
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 40194,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/browser-actions/alerts.spec.ts:4:8",
+                        "location": {
+                          "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/browser-actions/alerts.spec.ts",
+                          "column": 8,
+                          "line": 4
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 2 |\u001b[39m\n \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Example to demonstrate handling of JavaScript Alert, Confirm, Prompt in Playwright\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m   |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://the-internet.herokuapp.com/javascript_alerts\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/browser-actions/alerts.spec.ts",
+                            "column": 8,
+                            "line": 4
+                          },
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n\u001b[0m \u001b[90m 2 |\u001b[39m\n \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Example to demonstrate handling of JavaScript Alert, Confirm, Prompt in Playwright\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m   |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://the-internet.herokuapp.com/javascript_alerts\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/browser-actions/alerts.spec.ts:4:8\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:47.414Z",
+                      "startTime": "2025-09-16T22:42:23.642Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -170,10 +215,15 @@
                           "contentType": "application/zip",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-browser-25aa6-e-Confirm-Text-and-Click-OK-Chrome/trace.zip"
                         }
-                      ]
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/browser-actions/alerts.spec.ts",
+                        "column": 8,
+                        "line": 4
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "2d8352df6cf81f919b45-1ecb268e1b26be4b5573",
@@ -195,13 +245,15 @@
                   "results": [
                     {
                       "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 4082,
+                      "duration": 3325,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:47.413Z",
+                      "startTime": "2025-09-16T22:42:23.645Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -238,13 +290,15 @@
                   "results": [
                     {
                       "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 4673,
+                      "duration": 3747,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:47.413Z",
+                      "startTime": "2025-09-16T22:42:23.654Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -298,36 +352,37 @@
                   "results": [
                     {
                       "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 7273,
+                      "duration": 3270,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "{\n  name: \u001b[32m'rack.session'\u001b[39m,\n  value: \u001b[32m'BAh7CUkiD3Nlc3Npb25faWQGOgZFVEkiRWI0NjczYzY0ZTU5N2UzZTNmZWU1%0AMjJiMDNiOGU2NmFkMTBhNTEwNTU4NWM0ZTEwZWM5MzNkMDc1NGZlODZhNDYG%0AOwBGSSIJY3NyZgY7AEZJIiUwMzYzMmVhN2IxZjhhM2Y2YWJiMGEzZTdmZjZh%0AZTc0YQY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVFBfVVNFUl9BR0VOVAY7%0AAFRJIi05MDE0MjBiNDRjZmUyMWUyOWRjZTc0OWU3YjIxMzFjMmVhZmVlNjNm%0ABjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEkiLTEwODBjOGZkNjQy%0ANzJiZDg1OTZmZjI4MjMwNzVjMDUzOWNjNDNkOGEGOwBGSSIKZmxhc2gGOwBG%0AewA%3D%0A--fa1d5a10f29422d721fdf00c6a62b0cba2665f49'\u001b[39m,\n  domain: \u001b[32m'the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m-1\u001b[39m,\n  httpOnly: \u001b[33mtrue\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
+                          "text": "{\n  name: \u001b[32m'rack.session'\u001b[39m,\n  value: \u001b[32m'BAh7CUkiD3Nlc3Npb25faWQGOgZFVEkiRWQ3ZTVhZjg3NTMwMjhlYTczODNh%0AYThiYzBiMTA4NDE1Mzk5NGMxMzA3OGUxYzIzMDk4M2Q4N2EzY2JmMzg0OGEG%0AOwBGSSIJY3NyZgY7AEZJIiUwOGQzZmMwYzhhNGJmMzE0NTE5YzI3YmNjMzU2%0AN2Y5MgY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVFBfVVNFUl9BR0VOVAY7%0AAFRJIi1mODZhMzE2YjBlNDE2ZTZiNDlkNmM5NTZjZmIyMjJlYmE5MTA0ZDlj%0ABjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEkiLTEwODBjOGZkNjQy%0ANzJiZDg1OTZmZjI4MjMwNzVjMDUzOWNjNDNkOGEGOwBGSSIKZmxhc2gGOwBG%0AewA%3D%0A--38369f9e4d042fdcea3c6db67a833e132201998d'\u001b[39m,\n  domain: \u001b[32m'the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m-1\u001b[39m,\n  httpOnly: \u001b[33mtrue\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
                         },
                         {
                           "text": "\u001b[33m2\u001b[39m\n"
                         },
                         {
-                          "text": "{\n  name: \u001b[32m'optimizelySegments'\u001b[39m,\n  value: \u001b[32m'%7B%7D'\u001b[39m,\n  domain: \u001b[32m'.the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m1766938796.142945\u001b[39m,\n  httpOnly: \u001b[33mfalse\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
+                          "text": "{\n  name: \u001b[32m'optimizelySegments'\u001b[39m,\n  value: \u001b[32m'%7B%7D'\u001b[39m,\n  domain: \u001b[32m'.the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m1792622549.88055\u001b[39m,\n  httpOnly: \u001b[33mfalse\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
                         },
                         {
                           "text": "\u001b[33m2\u001b[39m\n"
                         },
                         {
-                          "text": "{\n  name: \u001b[32m'optimizelyEndUserId'\u001b[39m,\n  value: \u001b[32m'oeu1732378796143r0.14374071780723807'\u001b[39m,\n  domain: \u001b[32m'.the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m1766938796.14393\u001b[39m,\n  httpOnly: \u001b[33mfalse\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
+                          "text": "{\n  name: \u001b[32m'optimizelyEndUserId'\u001b[39m,\n  value: \u001b[32m'oeu1758062549881r0.772200194109323'\u001b[39m,\n  domain: \u001b[32m'.the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m1792622549.881473\u001b[39m,\n  httpOnly: \u001b[33mfalse\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
                         },
                         {
                           "text": "\u001b[33m2\u001b[39m\n"
                         },
                         {
-                          "text": "{\n  name: \u001b[32m'optimizelyBuckets'\u001b[39m,\n  value: \u001b[32m'%7B%7D'\u001b[39m,\n  domain: \u001b[32m'.the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m1766938796.144594\u001b[39m,\n  httpOnly: \u001b[33mfalse\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
+                          "text": "{\n  name: \u001b[32m'optimizelyBuckets'\u001b[39m,\n  value: \u001b[32m'%7B%7D'\u001b[39m,\n  domain: \u001b[32m'.the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m1792622549.882213\u001b[39m,\n  httpOnly: \u001b[33mfalse\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
                         },
                         {
                           "text": "\u001b[33m2\u001b[39m\n"
                         },
                         {
-                          "text": "{\n  name: \u001b[32m'optimizelyPendingLogEvents'\u001b[39m,\n  value: \u001b[32m'%5B%22n%3Dhttps%253A%252F%252Fthe-internet.herokuapp.com%252F%26u%3Doeu1732378796143r0.14374071780723807%26wxhr%3Dtrue%26t%3D1732378796145%26f%3D298349752%2C318188263%22%5D'\u001b[39m,\n  domain: \u001b[32m'.the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m1732378811\u001b[39m,\n  httpOnly: \u001b[33mfalse\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
+                          "text": "{\n  name: \u001b[32m'optimizelyPendingLogEvents'\u001b[39m,\n  value: \u001b[32m'%5B%22n%3Dhttps%253A%252F%252Fthe-internet.herokuapp.com%252F%26u%3Doeu1758062549881r0.772200194109323%26wxhr%3Dtrue%26t%3D1758062549883%26f%3D298349752%2C318188263%22%5D'\u001b[39m,\n  domain: \u001b[32m'.the-internet.herokuapp.com'\u001b[39m,\n  path: \u001b[32m'/'\u001b[39m,\n  expires: \u001b[33m1758062564\u001b[39m,\n  httpOnly: \u001b[33mfalse\u001b[39m,\n  secure: \u001b[33mfalse\u001b[39m,\n  sameSite: \u001b[32m'Lax'\u001b[39m\n}\n"
                         },
                         {
                           "text": "\u001b[33m2\u001b[39m\n"
@@ -335,7 +390,8 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:52.930Z",
+                      "startTime": "2025-09-16T22:42:27.821Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -371,14 +427,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4151,
+                      "duration": 3522,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:53.290Z",
+                      "startTime": "2025-09-16T22:42:27.870Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -432,13 +490,15 @@
                   "results": [
                     {
                       "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 1566,
+                      "duration": 1328,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:53.513Z",
+                      "startTime": "2025-09-16T22:42:28.217Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -499,14 +559,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 4882,
+                      "duration": 8619,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:54.007Z",
+                      "startTime": "2025-09-16T22:42:29.572Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -562,21 +624,26 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 4213,
+                      "duration": 9098,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "PAGE LOG: JQMIGRATE: Migrate is installed, version 3.4.1\n"
+                          "text": "PAGE LOG: Failed to load resource: the server responded with a status of 403 ()\n"
                         },
                         {
-                          "text": "PAGE LOG: JQMIGRATE: Migrate is installed, version 3.4.1\n"
+                          "text": "PAGE LOG: Potential permissions policy violation: autoplay is not allowed in this document.\n"
+                        },
+                        {
+                          "text": "PAGE LOG: Failed to load resource: the server responded with a status of 403 ()\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:55.126Z",
+                      "startTime": "2025-09-16T22:42:31.153Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -632,14 +699,110 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3385,
+                      "duration": 8792,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "PAGE LOG: Failed to load resource: the server responded with a status of 403 ()\n"
+                        },
+                        {
+                          "text": "PAGE LOG: Potential permissions policy violation: autoplay is not allowed in this document.\n"
+                        },
+                        {
+                          "text": "PAGE LOG: \n"
+                        },
+                        {
+                          "text": "PAGE LOG: Error\n"
+                        },
+                        {
+                          "text": "PAGE LOG: /.*.*=.*/\n"
+                        },
+                        {
+                          "text": "PAGE LOG: /.*.*=.*/\n"
+                        },
+                        {
+                          "text": "PAGE LOG: function () { [native code] }\n"
+                        },
+                        {
+                          "text": "PAGE LOG: function () { [native code] }\n"
+                        },
+                        {
+                          "text": "PAGE LOG: JSHandle@node\n"
+                        },
+                        {
+                          "text": "PAGE LOG: JSHandle@node\n"
+                        },
+                        {
+                          "text": "PAGE LOG: \u0000: 1\n"
+                        },
+                        {
+                          "text": "PAGE LOG: \u0000: 1\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG:  Error\n"
+                        },
+                        {
+                          "text": "PAGE LOG:  Error\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent Error\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent Error\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent Error\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent Error\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: %c%d font-size:0;color:transparent NaN\n"
+                        },
+                        {
+                          "text": "PAGE LOG: console.groupEnd\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:57.476Z",
+                      "startTime": "2025-09-16T22:42:31.457Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -712,14 +875,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 5098,
+                      "duration": 13167,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:59.126Z",
+                      "startTime": "2025-09-16T22:42:38.407Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -755,24 +920,13 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 9251,
+                      "duration": 16756,
                       "error": {
-                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
-                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts:24:54",
-                        "matcherResult": {
-                          "message": "\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
-                          "pass": false,
-                          "actual": "hidden",
-                          "name": "toBeVisible",
-                          "expected": "visible",
-                          "log": [
-                            "  - expect.toBeVisible with timeout 5000ms",
-                            "  - waiting for locator('.flash.success')"
-                          ],
-                          "timeout": 5000
-                        },
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts:24:54",
                         "location": {
                           "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts",
                           "column": 54,
@@ -787,13 +941,14 @@
                             "column": 54,
                             "line": 24
                           },
-                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n\n\u001b[0m \u001b[90m 22 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m\"#password\"\u001b[39m\u001b[33m,\u001b[39m record\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"button[type='submit']\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".flash.success\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h2\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Secure Area\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h4\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Welcome to the Secure Area. When you are done click logout below.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m       })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts:24:54\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n\n\u001b[0m \u001b[90m 22 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m\"#password\"\u001b[39m\u001b[33m,\u001b[39m record\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"button[type='submit']\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".flash.success\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h2\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Secure Area\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h4\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Welcome to the Secure Area. When you are done click logout below.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m       })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts:24:54\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:19:59.423Z",
+                      "startTime": "2025-09-16T22:42:40.327Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
@@ -804,6 +959,11 @@
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-data-dr-f3705--data-from-csv-file-1---3-3-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-data-dr-f3705--data-from-csv-file-1---3-3-Chrome/error-context.md"
                         },
                         {
                           "name": "trace",
@@ -840,13 +1000,15 @@
                   "results": [
                     {
                       "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 4016,
+                      "duration": 13415,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:00.241Z",
+                      "startTime": "2025-09-16T22:42:40.337Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -882,24 +1044,13 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "failed",
-                      "duration": 9095,
+                      "duration": 9271,
                       "error": {
-                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
-                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts:41:54",
-                        "matcherResult": {
-                          "message": "\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
-                          "pass": false,
-                          "actual": "hidden",
-                          "name": "toBeVisible",
-                          "expected": "visible",
-                          "log": [
-                            "  - expect.toBeVisible with timeout 5000ms",
-                            "  - waiting for locator('.flash.success')"
-                          ],
-                          "timeout": 5000
-                        },
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts:41:54",
                         "location": {
                           "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts",
                           "column": 54,
@@ -914,13 +1065,14 @@
                             "column": 54,
                             "line": 41
                           },
-                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n\n\u001b[0m \u001b[90m 39 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m\"#password\"\u001b[39m\u001b[33m,\u001b[39m record\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m 40 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"button[type='submit']\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 41 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".flash.success\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 42 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h2\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Secure Area\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h4\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Welcome to the Secure Area. When you are done click logout below.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 44 |\u001b[39m       })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts:41:54\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n\n\u001b[0m \u001b[90m 39 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m\"#password\"\u001b[39m\u001b[33m,\u001b[39m record\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m 40 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"button[type='submit']\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 41 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".flash.success\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 42 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h2\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Secure Area\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h4\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Welcome to the Secure Area. When you are done click logout below.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 44 |\u001b[39m       })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromCSV.spec.ts:41:54\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:00.921Z",
+                      "startTime": "2025-09-16T22:42:51.628Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
@@ -931,6 +1083,11 @@
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-data-dr-8ad62--data-from-csv-file-2---3-3-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-data-dr-8ad62--data-from-csv-file-2---3-3-Chrome/error-context.md"
                         },
                         {
                           "name": "trace",
@@ -983,9 +1140,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 4003,
+                      "duration": 3694,
                       "errors": [],
                       "stdout": [
                         {
@@ -1057,7 +1215,8 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:04.477Z",
+                      "startTime": "2025-09-16T22:42:53.939Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1094,23 +1253,12 @@
                   "results": [
                     {
                       "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "failed",
-                      "duration": 8915,
+                      "duration": 9116,
                       "error": {
-                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
-                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromExcel.spec.ts:35:50",
-                        "matcherResult": {
-                          "message": "\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
-                          "pass": false,
-                          "actual": "hidden",
-                          "name": "toBeVisible",
-                          "expected": "visible",
-                          "log": [
-                            "  - expect.toBeVisible with timeout 5000ms",
-                            "  - waiting for locator('.flash.success')"
-                          ],
-                          "timeout": 5000
-                        },
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromExcel.spec.ts:35:50",
                         "location": {
                           "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromExcel.spec.ts",
                           "column": 50,
@@ -1125,70 +1273,10 @@
                             "column": 50,
                             "line": 35
                           },
-                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n\n\u001b[0m \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m\"#password\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36mawait\u001b[39m getDataByName(\u001b[32m\"email3\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"password\"\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"button[type='submit']\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".flash.success\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m writeDataIntoCellByName(\u001b[32m\"email3\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"Login Successful\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"Failed\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[90m// await expect(page.locator(`xpath=//div[@id=\"flash\"]`)).toHaveText(await getDataFromExcel(filePath, \"login Data\", 2, 3));\u001b[39m\n \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h2\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Secure Area\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromExcel.spec.ts:35:50\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.flash.success')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.flash.success')\u001b[22m\n\n\n\u001b[0m \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m\"#password\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36mawait\u001b[39m getDataByName(\u001b[32m\"email3\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"password\"\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"button[type='submit']\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".flash.success\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m writeDataIntoCellByName(\u001b[32m\"email3\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"Login Successful\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"Failed\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[90m// await expect(page.locator(`xpath=//div[@id=\"flash\"]`)).toHaveText(await getDataFromExcel(filePath, \"login Data\", 2, 3));\u001b[39m\n \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".example h2\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Secure Area\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/data-driven/readDataFromExcel.spec.ts:35:50\u001b[22m"
                         }
                       ],
                       "stdout": [
-                        {
-                          "text": "Reading sheet [ login Data2 ]\n"
-                        },
-                        {
-                          "text": "Row 1 = [null,\"key\",\"email\",\"password\",\"expected result\",\"Login Successful\"]\n"
-                        },
-                        {
-                          "text": "Row 2 = [null,\"email1\",\"tomsmith\",\"SuperSecretPassword!\",\"You logged into a secure area!11\",\"Passed\"]\n"
-                        },
-                        {
-                          "text": "Row 3 = [null,\"email2\",\"tomsmith11\",\"SuperSecretPassword!11\",\"You logged into a secure area!12\"]\n"
-                        },
-                        {
-                          "text": "Row 4 = [null,\"email3\",\"tomsmith12\",\"SuperSecretPassword!12\",\"You logged into a secure area!13\"]\n"
-                        },
-                        {
-                          "text": "Row 5 = [null,\"email4\",\"tomsmith13\",\"SuperSecretPassword!13\",\"You logged into a secure area!14\"]\n"
-                        },
-                        {
-                          "text": "Row 6 = [null,\"email5\",\"tomsmith14\",\"SuperSecretPassword!14\",\"You logged into a secure area!15\"]\n"
-                        },
-                        {
-                          "text": "Row 7 = [null,\"email6\",\"tomsmith15\",\"SuperSecretPassword!15\",\"You logged into a secure area!16\",\"Passed\"]\n"
-                        },
-                        {
-                          "text": "Row 8 = [null,\"email7\",\"tomsmith16\",\"SuperSecretPassword!16\",\"You logged into a secure area!17\"]\n"
-                        },
-                        {
-                          "text": "Row 9 = [null,\"email8\",\"tomsmith17\",\"SuperSecretPassword!17\",\"You logged into a secure area!18\"]\n"
-                        },
-                        {
-                          "text": "Row 10 = [null,\"email9\",\"tomsmith18\",\"SuperSecretPassword!18\",\"You logged into a secure area!19\"]\n"
-                        },
-                        {
-                          "text": "Row 11 = [null,\"email10\",\"tomsmith19\",\"SuperSecretPassword!19\",\"You logged into a secure area!20\"]\n"
-                        },
-                        {
-                          "text": "Row 12 = [null,\"email11\",\"tomsmith20\",\"SuperSecretPassword!20\",\"You logged into a secure area!21\"]\n"
-                        },
-                        {
-                          "text": "Row 13 = [null,\"email12\",\"tomsmith21\",\"SuperSecretPassword!21\",\"You logged into a secure area!22\"]\n"
-                        },
-                        {
-                          "text": "Row 14 = [null,\"email13\",\"tomsmith22\",\"SuperSecretPassword!22\",\"You logged into a secure area!23\"]\n"
-                        },
-                        {
-                          "text": "Row 15 = [null,\"email14\",\"tomsmith23\",\"SuperSecretPassword!23\",\"You logged into a secure area!24\"]\n"
-                        },
-                        {
-                          "text": "Row 16 = [null,\"email15\",\"tomsmith24\",\"SuperSecretPassword!24\",\"You logged into a secure area!25\"]\n"
-                        },
-                        {
-                          "text": "Row 17 = [null,\"email16\",\"tomsmith25\",\"SuperSecretPassword!25\",\"You logged into a secure area!26\"]\n"
-                        },
-                        {
-                          "text": "Row 18 = [null,\"email17\",\"tomsmith26\",\"SuperSecretPassword!26\",\"You logged into a secure area!27\"]\n"
-                        },
-                        {
-                          "text": "Row 19 = [null,\"email18\",\"tomsmith27\",\"SuperSecretPassword!27\",\"You logged into a secure area!28\"]\n"
-                        },
                         {
                           "text": "Get value [ tomsmith12 ] from Row[4]= email3 and Column[2]= email\n"
                         },
@@ -1198,7 +1286,8 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:04.477Z",
+                      "startTime": "2025-09-16T22:42:57.676Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
@@ -1209,6 +1298,11 @@
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-data-dr-17763-ead-data-from-excel-by-name-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-data-dr-17763-ead-data-from-excel-by-name-Chrome/error-context.md"
                         },
                         {
                           "name": "trace",
@@ -1254,9 +1348,10 @@
               "projectName": "Chrome",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 4,
+                  "parallelIndex": 3,
                   "status": "failed",
-                  "duration": 86,
+                  "duration": 293,
                   "error": {
                     "message": "TypeError: Invalid URL",
                     "stack": "TypeError: Invalid URL\n    at parse (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/node_modules/pg-connection-string/index.js:29:14)\n    at ConnectionParameters (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/node_modules/pg/lib/connection-parameters.js:56:42)\n    at Client (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/node_modules/pg/lib/client.js:18:33)\n    at DBActions.connectDB (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/lib/DBActions.ts:13:16)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/database/postgreSQL.spec.ts:3:13",
@@ -1284,7 +1379,8 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-11-23T16:20:09.376Z",
+                  "startTime": "2025-09-16T22:43:05.396Z",
+                  "annotations": [],
                   "attachments": [
                     {
                       "name": "trace",
@@ -1335,14 +1431,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4447,
+                      "duration": 3474,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:09.345Z",
+                      "startTime": "2025-09-16T22:43:05.239Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1367,7 +1465,7 @@
             },
             {
               "title": "Working with Checkboxes 2",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1378,36 +1476,17 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "status": "timedOut",
-                      "duration": 31550,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/checkBox.spec.ts",
-                            "column": 16,
-                            "line": 22
-                          },
-                          "message": "Error: page.goto: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.w3schools.com/howto/howto_css_custom_checkbox.asp\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 20 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m   test(\u001b[32m\"Working with Checkboxes 2\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://www.w3schools.com/howto/howto_css_custom_checkbox.asp\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[90m// $$ -> finds all elements matching the specified selector\u001b[39m\n \u001b[90m 24 |\u001b[39m     \u001b[36mconst\u001b[39m checkBx \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39m$$(\u001b[32m'#main div :nth-child(1) input[type=\"checkbox\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[90m// uncheck the first checkbox\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/checkBox.spec.ts:22:16\u001b[22m"
-                        }
-                      ],
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 6059,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:10.398Z",
+                      "startTime": "2025-09-16T22:43:06.792Z",
+                      "annotations": [],
                       "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-eaac4-t-Working-with-Checkboxes-2-Chrome/test-failed-1.png"
-                        },
                         {
                           "name": "video",
                           "contentType": "video/webm",
@@ -1421,7 +1500,7 @@
                       ]
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "ccb37b139d6c57d719c3-86f6bc12ab9a794de506",
@@ -1442,14 +1521,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 6043,
+                      "duration": 5982,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:10.898Z",
+                      "startTime": "2025-09-16T22:43:09.406Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1502,14 +1583,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 13614,
+                      "duration": 23457,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:13.866Z",
+                      "startTime": "2025-09-16T22:43:13.340Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1534,7 +1617,7 @@
             },
             {
               "title": "Download a Single file and assert",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1545,36 +1628,17 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "status": "timedOut",
-                      "duration": 30686,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/downloadAndUploadFiles.spec.ts",
-                            "column": 48,
-                            "line": 22
-                          },
-                          "message": "Error: page.waitForEvent: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================\n\n\u001b[0m \u001b[90m 20 |\u001b[39m   test(\u001b[32m\"Download a Single file and assert\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://the-internet.herokuapp.com/download\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mconst\u001b[39m [download] \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([page\u001b[33m.\u001b[39mwaitForEvent(\u001b[32m\"download\"\u001b[39m)\u001b[33m,\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`text=${fileName}`\u001b[39m)\u001b[33m.\u001b[39mclick()])\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mconst\u001b[39m suggestedFileName \u001b[33m=\u001b[39m download\u001b[33m.\u001b[39msuggestedFilename()\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m     \u001b[36mconst\u001b[39m filePath \u001b[33m=\u001b[39m downloadFiles \u001b[33m+\u001b[39m suggestedFileName\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m download\u001b[33m.\u001b[39msaveAs(filePath)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/downloadAndUploadFiles.spec.ts:22:48\u001b[22m"
-                        }
-                      ],
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4246,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:14.552Z",
+                      "startTime": "2025-09-16T22:43:15.525Z",
+                      "annotations": [],
                       "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-cddea-ad-a-Single-file-and-assert-Chrome/test-failed-1.png"
-                        },
                         {
                           "name": "video",
                           "contentType": "video/webm",
@@ -1588,7 +1652,7 @@
                       ]
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "61decf064b2f9234e2b2-c0416dcd2a0da14fa72c",
@@ -1617,14 +1681,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 25126,
+                      "duration": 24451,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:17.497Z",
+                      "startTime": "2025-09-16T22:43:19.802Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1661,13 +1727,15 @@
                   "results": [
                     {
                       "workerIndex": 7,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 5224,
+                      "duration": 5747,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:28.129Z",
+                      "startTime": "2025-09-16T22:43:25.352Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1712,13 +1780,15 @@
                   "results": [
                     {
                       "workerIndex": 7,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3238,
+                      "duration": 5483,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:33.374Z",
+                      "startTime": "2025-09-16T22:43:31.720Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1754,14 +1824,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 3428,
+                      "duration": 4535,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:36.679Z",
+                      "startTime": "2025-09-16T22:43:36.842Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1781,7 +1853,7 @@
               ],
               "id": "61decf064b2f9234e2b2-a8588a34fccd0f37017e",
               "file": "tests/e2e/examples/element-actions/downloadAndUploadFiles.spec.ts",
-              "line": 69,
+              "line": 73,
               "column": 7
             },
             {
@@ -1798,8 +1870,9 @@
                   "results": [
                     {
                       "workerIndex": 7,
+                      "parallelIndex": 2,
                       "status": "timedOut",
-                      "duration": 31199,
+                      "duration": 31556,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -1812,15 +1885,16 @@
                           "location": {
                             "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/downloadAndUploadFiles.spec.ts",
                             "column": 12,
-                            "line": 83
+                            "line": 87
                           },
-                          "message": "Error: page.waitForEvent: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================\n\n\u001b[0m \u001b[90m 81 |\u001b[39m     \u001b[36mconst\u001b[39m [fileChooser] \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n \u001b[90m 82 |\u001b[39m       \u001b[90m// It is important to call waitForEvent before click to set up waiting.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m       page\u001b[33m.\u001b[39mwaitForEvent(\u001b[32m\"filechooser\"\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 84 |\u001b[39m       \u001b[90m// Opens the file chooser.\u001b[39m\n \u001b[90m 85 |\u001b[39m       page\u001b[33m.\u001b[39mlocator(\u001b[32m\"#uploadFile\"\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m,\u001b[39m\n \u001b[90m 86 |\u001b[39m     ])\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/downloadAndUploadFiles.spec.ts:83:12\u001b[22m"
+                          "message": "Error: page.waitForEvent: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================\n\n\u001b[0m \u001b[90m 85 |\u001b[39m     \u001b[36mconst\u001b[39m [fileChooser] \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n \u001b[90m 86 |\u001b[39m       \u001b[90m// It is important to call waitForEvent before click to set up waiting.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 87 |\u001b[39m       page\u001b[33m.\u001b[39mwaitForEvent(\u001b[32m'filechooser'\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 88 |\u001b[39m       \u001b[90m// Opens the file chooser.\u001b[39m\n \u001b[90m 89 |\u001b[39m       page\u001b[33m.\u001b[39mlocator(\u001b[32m'#uploadFile'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m,\u001b[39m\n \u001b[90m 90 |\u001b[39m     ])\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/downloadAndUploadFiles.spec.ts:87:12\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:40.152Z",
+                      "startTime": "2025-09-16T22:43:37.271Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
@@ -1831,6 +1905,11 @@
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-a251a-on-input-element-and-assert-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-a251a-on-input-element-and-assert-Chrome/error-context.md"
                         },
                         {
                           "name": "trace",
@@ -1845,7 +1924,7 @@
               ],
               "id": "61decf064b2f9234e2b2-0c903459355de61fdc9e",
               "file": "tests/e2e/examples/element-actions/downloadAndUploadFiles.spec.ts",
-              "line": 77,
+              "line": 81,
               "column": 7
             }
           ]
@@ -1878,9 +1957,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 2847,
+                      "duration": 2819,
                       "errors": [],
                       "stdout": [
                         {
@@ -1895,7 +1975,8 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:43.197Z",
+                      "startTime": "2025-09-16T22:43:41.417Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -1949,8 +2030,9 @@
                   "results": [
                     {
                       "workerIndex": 6,
+                      "parallelIndex": 3,
                       "status": "timedOut",
-                      "duration": 36484,
+                      "duration": 44030,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -1971,7 +2053,8 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:42.680Z",
+                      "startTime": "2025-09-16T22:43:44.259Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2024,14 +2107,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 9,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2481,
+                      "duration": 4382,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:45.633Z",
+                      "startTime": "2025-09-16T22:43:44.310Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2067,14 +2152,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3206,
+                      "duration": 5281,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:46.676Z",
+                      "startTime": "2025-09-16T22:43:48.763Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2110,14 +2197,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 9,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3475,
+                      "duration": 2932,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:48.475Z",
+                      "startTime": "2025-09-16T22:43:54.146Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2153,9 +2242,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2494,
+                      "duration": 4111,
                       "errors": [],
                       "stdout": [
                         {
@@ -2164,7 +2254,8 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:49.901Z",
+                      "startTime": "2025-09-16T22:43:57.106Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2200,9 +2291,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 9,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5560,
+                      "duration": 3261,
                       "errors": [],
                       "stdout": [
                         {
@@ -2211,7 +2303,8 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:51.968Z",
+                      "startTime": "2025-09-16T22:44:01.236Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2236,7 +2329,7 @@
             },
             {
               "title": "Count the total number of images and assert",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -2248,28 +2341,64 @@
                   "results": [
                     {
                       "workerIndex": 8,
-                      "status": "passed",
-                      "duration": 4181,
-                      "errors": [],
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2657,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m43\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m43\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/htmlDocumentMethod.spec.ts:37:26",
+                        "location": {
+                          "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/htmlDocumentMethod.spec.ts",
+                          "column": 26,
+                          "line": 37
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://pixabay.com/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mvar\u001b[39m length \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m document\u001b[33m.\u001b[39mimages\u001b[33m.\u001b[39mlength)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m expect(length)\u001b[33m.\u001b[39mtoEqual(\u001b[35m43\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m\n \u001b[90m 40 |\u001b[39m   test(\u001b[32m'Get the Tag Name and assert'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/htmlDocumentMethod.spec.ts",
+                            "column": 26,
+                            "line": 37
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m43\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n\u001b[0m \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://pixabay.com/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mvar\u001b[39m length \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m document\u001b[33m.\u001b[39mimages\u001b[33m.\u001b[39mlength)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m expect(length)\u001b[33m.\u001b[39mtoEqual(\u001b[35m43\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m\n \u001b[90m 40 |\u001b[39m   test(\u001b[32m'Get the Tag Name and assert'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/htmlDocumentMethod.spec.ts:37:26\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:52.413Z",
+                      "startTime": "2025-09-16T22:44:03.528Z",
+                      "annotations": [],
                       "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-b9064-number-of-images-and-assert-Chrome/test-failed-1.png"
+                        },
                         {
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-b9064-number-of-images-and-assert-Chrome/video.webm"
                         },
                         {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-b9064-number-of-images-and-assert-Chrome/error-context.md"
+                        },
+                        {
                           "name": "trace",
                           "contentType": "application/zip",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-b9064-number-of-images-and-assert-Chrome/trace.zip"
                         }
-                      ]
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/htmlDocumentMethod.spec.ts",
+                        "column": 26,
+                        "line": 37
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "03352a4649f32e8d5960-e32380198277031e8eac",
@@ -2290,14 +2419,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4160,
+                      "duration": 3808,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:56.719Z",
+                      "startTime": "2025-09-16T22:44:04.546Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2351,11 +2482,12 @@
                   "results": [
                     {
                       "workerIndex": 9,
+                      "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 4198,
+                      "duration": 4053,
                       "error": {
-                        "message": "Error: locator.fill: Error: Element is not an <input>, <textarea> or [contenteditable] element\nCall log:\n\u001b[2m  - waiting for locator('#mce_0_ifr').contentFrame().locator('#tinymce')\u001b[22m\n\u001b[2m    - locator resolved to <body id=\"tinymce\" data-id=\"mce_0\" spellcheck=\"false\" class=\"mce-content-body \" aria-label=\"Rich Text Area. Press ALT-0 for help.\">…</body>\u001b[22m\n\u001b[2m    - fill(\"Test Frame\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n",
-                        "stack": "Error: locator.fill: Error: Element is not an <input>, <textarea> or [contenteditable] element\nCall log:\n\u001b[2m  - waiting for locator('#mce_0_ifr').contentFrame().locator('#tinymce')\u001b[22m\n\u001b[2m    - locator resolved to <body id=\"tinymce\" data-id=\"mce_0\" spellcheck=\"false\" class=\"mce-content-body \" aria-label=\"Rich Text Area. Press ALT-0 for help.\">…</body>\u001b[22m\n\u001b[2m    - fill(\"Test Frame\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/ifram.spec.ts:9:20",
+                        "message": "Error: locator.fill: Error: Element is not an <input>, <textarea>, <select> or [contenteditable] and does not have a role allowing [aria-readonly]\nCall log:\n\u001b[2m  - waiting for locator('#mce_0_ifr').contentFrame().locator('#tinymce')\u001b[22m\n\u001b[2m    - locator resolved to <body id=\"tinymce\" data-id=\"mce_0\" spellcheck=\"false\" class=\"mce-content-body \" aria-label=\"Rich Text Area. Press ALT-0 for help.\">…</body>\u001b[22m\n\u001b[2m    - fill(\"Test Frame\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n",
+                        "stack": "Error: locator.fill: Error: Element is not an <input>, <textarea>, <select> or [contenteditable] and does not have a role allowing [aria-readonly]\nCall log:\n\u001b[2m  - waiting for locator('#mce_0_ifr').contentFrame().locator('#tinymce')\u001b[22m\n\u001b[2m    - locator resolved to <body id=\"tinymce\" data-id=\"mce_0\" spellcheck=\"false\" class=\"mce-content-body \" aria-label=\"Rich Text Area. Press ALT-0 for help.\">…</body>\u001b[22m\n\u001b[2m    - fill(\"Test Frame\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/ifram.spec.ts:9:20",
                         "location": {
                           "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/ifram.spec.ts",
                           "column": 20,
@@ -2370,13 +2502,14 @@
                             "column": 20,
                             "line": 9
                           },
-                          "message": "Error: locator.fill: Error: Element is not an <input>, <textarea> or [contenteditable] element\nCall log:\n\u001b[2m  - waiting for locator('#mce_0_ifr').contentFrame().locator('#tinymce')\u001b[22m\n\u001b[2m    - locator resolved to <body id=\"tinymce\" data-id=\"mce_0\" spellcheck=\"false\" class=\"mce-content-body \" aria-label=\"Rich Text Area. Press ALT-0 for help.\">…</body>\u001b[22m\n\u001b[2m    - fill(\"Test Frame\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n\n\n\u001b[0m \u001b[90m  7 |\u001b[39m     \u001b[36mconst\u001b[39m frame \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mframeLocator(\u001b[32m\"#mce_0_ifr\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  8 |\u001b[39m     \u001b[36mconst\u001b[39m textarea \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m frame\u001b[33m.\u001b[39mlocator(\u001b[32m\"#tinymce\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m textarea\u001b[33m.\u001b[39mfill(\u001b[32m\"Test Frame\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(textarea)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Test Frame\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/ifram.spec.ts:9:20\u001b[22m"
+                          "message": "Error: locator.fill: Error: Element is not an <input>, <textarea>, <select> or [contenteditable] and does not have a role allowing [aria-readonly]\nCall log:\n\u001b[2m  - waiting for locator('#mce_0_ifr').contentFrame().locator('#tinymce')\u001b[22m\n\u001b[2m    - locator resolved to <body id=\"tinymce\" data-id=\"mce_0\" spellcheck=\"false\" class=\"mce-content-body \" aria-label=\"Rich Text Area. Press ALT-0 for help.\">…</body>\u001b[22m\n\u001b[2m    - fill(\"Test Frame\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n\n\n\u001b[0m \u001b[90m  7 |\u001b[39m     \u001b[36mconst\u001b[39m frame \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mframeLocator(\u001b[32m\"#mce_0_ifr\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  8 |\u001b[39m     \u001b[36mconst\u001b[39m textarea \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m frame\u001b[33m.\u001b[39mlocator(\u001b[32m\"#tinymce\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m textarea\u001b[33m.\u001b[39mfill(\u001b[32m\"Test Frame\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(textarea)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m\"Test Frame\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/element-actions/ifram.spec.ts:9:20\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:20:57.546Z",
+                      "startTime": "2025-09-16T22:44:07.692Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
@@ -2387,6 +2520,11 @@
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-4fabc-r-which-is-inside-an-iframe-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-element-4fabc-r-which-is-inside-an-iframe-Chrome/error-context.md"
                         },
                         {
                           "name": "trace",
@@ -2422,14 +2560,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2281,
+                      "duration": 2788,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:00.901Z",
+                      "startTime": "2025-09-16T22:44:08.502Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2476,13 +2616,15 @@
               "results": [
                 {
                   "workerIndex": 10,
+                  "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 3626,
+                  "duration": 5620,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-11-23T16:21:02.227Z",
+                  "startTime": "2025-09-16T22:44:09.666Z",
+                  "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
@@ -2533,14 +2675,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3280,
+                      "duration": 3674,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:03.196Z",
+                      "startTime": "2025-09-16T22:44:11.378Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2593,14 +2737,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 10,
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1211,
+                      "duration": 2038,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:06.343Z",
+                      "startTime": "2025-09-16T22:44:12.941Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2653,7 +2799,8 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "failed",
                       "duration": 1,
                       "error": {
@@ -2668,7 +2815,8 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:06.499Z",
+                      "startTime": "2025-09-16T22:44:15.111Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
@@ -2699,9 +2847,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 11,
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
                       "status": "failed",
-                      "duration": 7,
+                      "duration": 11,
                       "error": {
                         "message": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'",
                         "stack": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'"
@@ -2714,7 +2863,8 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:06.913Z",
+                      "startTime": "2025-09-16T22:44:16.161Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
@@ -2745,9 +2895,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 12,
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 6,
+                      "duration": 1,
                       "error": {
                         "message": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'",
                         "stack": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'"
@@ -2760,7 +2911,8 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:07.782Z",
+                      "startTime": "2025-09-16T22:44:15.566Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
@@ -2791,9 +2943,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 10,
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 1,
+                      "duration": 20,
                       "error": {
                         "message": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'",
                         "stack": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'"
@@ -2806,7 +2959,8 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:07.575Z",
+                      "startTime": "2025-09-16T22:44:17.209Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
@@ -2837,9 +2991,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 13,
+                      "workerIndex": 10,
+                      "parallelIndex": 2,
                       "status": "failed",
-                      "duration": 8,
+                      "duration": 1,
                       "error": {
                         "message": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'",
                         "stack": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'"
@@ -2852,7 +3007,8 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:07.965Z",
+                      "startTime": "2025-09-16T22:44:15.872Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
@@ -2884,8 +3040,9 @@
                   "results": [
                     {
                       "workerIndex": 14,
+                      "parallelIndex": 2,
                       "status": "failed",
-                      "duration": 7,
+                      "duration": 25,
                       "error": {
                         "message": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'",
                         "stack": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'storageState.json'"
@@ -2898,7 +3055,8 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:08.631Z",
+                      "startTime": "2025-09-16T22:44:19.251Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
@@ -2946,14 +3104,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 15,
+                      "workerIndex": 16,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1624,
+                      "duration": 2556,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:09.659Z",
+                      "startTime": "2025-09-16T22:44:22.933Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -2989,14 +3149,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2077,
+                      "duration": 3101,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:09.833Z",
+                      "startTime": "2025-09-16T22:44:22.934Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3033,8 +3195,9 @@
                   "results": [
                     {
                       "workerIndex": 17,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3410,
+                      "duration": 3810,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -3042,14 +3205,15 @@
                       "steps": [
                         {
                           "title": "Act",
-                          "duration": 1116
+                          "duration": 1584
                         },
                         {
                           "title": "Assert",
-                          "duration": 929
+                          "duration": 394
                         }
                       ],
-                      "startTime": "2024-11-23T16:21:12.605Z",
+                      "startTime": "2025-09-16T22:44:24.988Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3091,7 +3255,7 @@
           "specs": [
             {
               "title": "@Smoke Story #1 - Validate Page Components",
-              "ok": true,
+              "ok": false,
               "tags": [
                 "Smoke"
               ],
@@ -3104,28 +3268,59 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 15,
-                      "status": "passed",
-                      "duration": 2026,
-                      "errors": [],
+                      "workerIndex": 16,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 7400,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nTimeout:  5000ms\n  Timeout 5000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('img[alt=\"Google\"]')\u001b[22m\n\u001b[2m  - Timeout 5000ms exceeded.\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nTimeout:  5000ms\n  Timeout 5000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('img[alt=\"Google\"]')\u001b[22m\n\u001b[2m  - Timeout 5000ms exceeded.\u001b[22m\n\n    at GoogleHomePage.expectGoogleLogoToBeDisplayed (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/google/googleHomePage.ts:22:40)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/googleLogo.spec.ts:22:28\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/googleLogo.spec.ts:21:16",
+                        "location": {
+                          "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/google/googleHomePage.ts",
+                          "column": 40,
+                          "line": 22
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39msrc/pages/google/googleHomePage.ts:22\n\n\u001b[0m \u001b[90m 20 |\u001b[39m\n \u001b[90m 21 |\u001b[39m   \u001b[36masync\u001b[39m expectGoogleLogoToBeDisplayed()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgoogleLogoImage)\u001b[33m.\u001b[39mtoHaveScreenshot()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m   }\n \u001b[90m 24 |\u001b[39m\n \u001b[90m 25 |\u001b[39m   \u001b[36masync\u001b[39m expectPageTitleToBeCorrect()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/google/googleHomePage.ts",
+                            "column": 40,
+                            "line": 22
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nTimeout:  5000ms\n  Timeout 5000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('img[alt=\"Google\"]')\u001b[22m\n\u001b[2m  - Timeout 5000ms exceeded.\u001b[22m\n\n\n\u001b[90m   at \u001b[39msrc/pages/google/googleHomePage.ts:22\n\n\u001b[0m \u001b[90m 20 |\u001b[39m\n \u001b[90m 21 |\u001b[39m   \u001b[36masync\u001b[39m expectGoogleLogoToBeDisplayed()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgoogleLogoImage)\u001b[33m.\u001b[39mtoHaveScreenshot()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m   }\n \u001b[90m 24 |\u001b[39m\n \u001b[90m 25 |\u001b[39m   \u001b[36masync\u001b[39m expectPageTitleToBeCorrect()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m\n\u001b[2m    at GoogleHomePage.expectGoogleLogoToBeDisplayed (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/google/googleHomePage.ts:22:40)\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/googleLogo.spec.ts:22:28\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/googleLogo.spec.ts:21:16\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
                       "steps": [
                         {
                           "title": "When I navigate to Google homepage",
-                          "duration": 1539
+                          "duration": 1770
                         },
                         {
                           "title": "Then the Page Title should be \"Google\"",
-                          "duration": 19
+                          "duration": 48
                         },
                         {
                           "title": "And the Google logo should be displayed",
-                          "duration": 263
+                          "duration": 5025,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nTimeout:  5000ms\n  Timeout 5000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('img[alt=\"Google\"]')\u001b[22m\n\u001b[2m  - Timeout 5000ms exceeded.\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nTimeout:  5000ms\n  Timeout 5000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - waiting for locator('img[alt=\"Google\"]')\u001b[22m\n\u001b[2m  - Timeout 5000ms exceeded.\u001b[22m\n\n    at GoogleHomePage.expectGoogleLogoToBeDisplayed (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/google/googleHomePage.ts:22:40)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/googleLogo.spec.ts:22:28\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/googleLogo.spec.ts:21:16",
+                            "location": {
+                              "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/google/googleHomePage.ts",
+                              "column": 40,
+                              "line": 22
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39msrc/pages/google/googleHomePage.ts:22\n\n\u001b[0m \u001b[90m 20 |\u001b[39m\n \u001b[90m 21 |\u001b[39m   \u001b[36masync\u001b[39m expectGoogleLogoToBeDisplayed()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgoogleLogoImage)\u001b[33m.\u001b[39mtoHaveScreenshot()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m   }\n \u001b[90m 24 |\u001b[39m\n \u001b[90m 25 |\u001b[39m   \u001b[36masync\u001b[39m expectPageTitleToBeCorrect()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m"
+                          }
                         }
                       ],
-                      "startTime": "2024-11-23T16:21:11.771Z",
+                      "startTime": "2025-09-16T22:44:26.561Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -3138,19 +3333,39 @@
                           "body": "eyJkZXNjcmlwdGlvbiI6IldoZW4gSSBuYXZpZ2F0ZSB0byBHb29nbGUgaG9tZXBhZ2UsIFRoZW4gdGhlIFBhZ2UgVGl0bGUgc2hvdWxkIGJlIFwiR29vZ2xlXCIsIEFuZCB0aGUgR29vZ2xlIExvZ28gc2hvdWxkIGJlIGRpc3BsYXllZC4ifQ=="
                         },
                         {
+                          "name": "Playwright-website-Smoke--a980d--Validate-Page-Components-1-expected.png",
+                          "contentType": "image/png",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/googleLogo.spec.ts-snapshots/Playwright-website-Smoke-Story-1---Validate-Page-Components-1-Chrome-darwin.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-googleL-a5b50----Validate-Page-Components-Chrome/test-failed-1.png"
+                        },
+                        {
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-googleL-a5b50----Validate-Page-Components-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-googleL-a5b50----Validate-Page-Components-Chrome/error-context.md"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-examples-googleL-a5b50----Validate-Page-Components-Chrome/trace.zip"
                         }
-                      ]
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/google/googleHomePage.ts",
+                        "column": 40,
+                        "line": 22
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "d862071bc5aa14ab71fd-2bc8dc3d1799fb86dde8",
@@ -3188,14 +3403,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5350,
+                      "duration": 3058,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:12.292Z",
+                      "startTime": "2025-09-16T22:44:27.125Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3231,14 +3448,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 15,
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 6409,
+                      "duration": 10639,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:13.829Z",
+                      "startTime": "2025-09-16T22:44:29.548Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3274,14 +3493,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 17,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3197,
+                      "duration": 9005,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:16.522Z",
+                      "startTime": "2025-09-16T22:44:30.221Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3330,7 +3551,12 @@
                   "timeout": 30000,
                   "annotations": [
                     {
-                      "type": "skip"
+                      "type": "skip",
+                      "location": {
+                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/template.spec.ts",
+                        "line": 41,
+                        "column": 15
+                      }
                     }
                   ],
                   "expectedStatus": "skipped",
@@ -3339,13 +3565,15 @@
                   "results": [
                     {
                       "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:17.672Z",
+                      "startTime": "2025-09-16T22:44:30.283Z",
+                      "annotations": [],
                       "attachments": []
                     }
                   ],
@@ -3366,7 +3594,12 @@
                   "timeout": 30000,
                   "annotations": [
                     {
-                      "type": "skip"
+                      "type": "skip",
+                      "location": {
+                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/examples/template.spec.ts",
+                        "line": 41,
+                        "column": 15
+                      }
                     }
                   ],
                   "expectedStatus": "skipped",
@@ -3375,13 +3608,15 @@
                   "results": [
                     {
                       "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:17.673Z",
+                      "startTime": "2025-09-16T22:44:30.286Z",
+                      "annotations": [],
                       "attachments": []
                     }
                   ],
@@ -3423,14 +3658,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 18,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 2806,
+                      "duration": 7406,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:17.685Z",
+                      "startTime": "2025-09-16T22:44:30.967Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3467,13 +3704,15 @@
                   "results": [
                     {
                       "workerIndex": 18,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 1292,
+                      "duration": 2102,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:19.833Z",
+                      "startTime": "2025-09-16T22:44:39.059Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3509,14 +3748,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 17,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1363,
+                      "duration": 1954,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:19.753Z",
+                      "startTime": "2025-09-16T22:44:39.384Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3560,14 +3801,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1375,
+                      "duration": 2516,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:20.531Z",
+                      "startTime": "2025-09-16T22:44:40.285Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3603,14 +3846,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 15,
+                      "workerIndex": 18,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 1530,
+                      "duration": 3970,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:20.839Z",
+                      "startTime": "2025-09-16T22:44:41.198Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3646,14 +3891,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 17,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1351,
+                      "duration": 2986,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:21.151Z",
+                      "startTime": "2025-09-16T22:44:41.377Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3697,14 +3944,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 18,
+                      "workerIndex": 19,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1210,
+                      "duration": 5913,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:21.689Z",
+                      "startTime": "2025-09-16T22:44:43.260Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3740,14 +3989,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1277,
+                      "duration": 3164,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:21.962Z",
+                      "startTime": "2025-09-16T22:44:42.826Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3784,13 +4035,15 @@
                   "results": [
                     {
                       "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1350,
+                      "duration": 3436,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:22.391Z",
+                      "startTime": "2025-09-16T22:44:44.455Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3834,14 +4087,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 17,
+                      "workerIndex": 18,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 1946,
+                      "duration": 5121,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:22.524Z",
+                      "startTime": "2025-09-16T22:44:45.198Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3877,14 +4132,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 18,
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1211,
+                      "duration": 4484,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:22.919Z",
+                      "startTime": "2025-09-16T22:44:46.008Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3920,14 +4177,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1242,
+                      "duration": 4444,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:23.251Z",
+                      "startTime": "2025-09-16T22:44:47.939Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -3963,14 +4222,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 15,
+                      "workerIndex": 19,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1798,
+                      "duration": 4210,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:23.760Z",
+                      "startTime": "2025-09-16T22:44:50.166Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4007,13 +4268,15 @@
                   "results": [
                     {
                       "workerIndex": 18,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 1726,
+                      "duration": 4186,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:24.155Z",
+                      "startTime": "2025-09-16T22:44:50.366Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4058,13 +4321,15 @@
                   "results": [
                     {
                       "workerIndex": 17,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1525,
+                      "duration": 3932,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:24.503Z",
+                      "startTime": "2025-09-16T22:44:50.553Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4108,14 +4373,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1601,
+                      "duration": 2073,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:24.514Z",
+                      "startTime": "2025-09-16T22:44:52.408Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4151,14 +4418,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 15,
+                      "workerIndex": 19,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1214,
+                      "duration": 7005,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:25.576Z",
+                      "startTime": "2025-09-16T22:44:54.478Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4194,14 +4463,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 18,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1520,
+                      "duration": 6670,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:25.906Z",
+                      "startTime": "2025-09-16T22:44:54.522Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4246,13 +4517,15 @@
                   "results": [
                     {
                       "workerIndex": 17,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1569,
+                      "duration": 4414,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:26.050Z",
+                      "startTime": "2025-09-16T22:44:54.533Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4296,14 +4569,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 18,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 1459,
+                      "duration": 4688,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:26.147Z",
+                      "startTime": "2025-09-16T22:44:54.598Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4339,9 +4614,10 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 15,
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1323,
+                      "duration": 9849,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -4349,18 +4625,19 @@
                       "steps": [
                         {
                           "title": "Showing all items",
-                          "duration": 39
+                          "duration": 163
                         },
                         {
                           "title": "Showing active items",
-                          "duration": 47
+                          "duration": 237
                         },
                         {
                           "title": "Showing completed items",
-                          "duration": 77
+                          "duration": 101
                         }
                       ],
-                      "startTime": "2024-11-23T16:21:26.803Z",
+                      "startTime": "2025-09-16T22:44:59.111Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4397,13 +4674,15 @@
                   "results": [
                     {
                       "workerIndex": 18,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 1403,
+                      "duration": 6498,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:27.460Z",
+                      "startTime": "2025-09-16T22:45:00.278Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4439,14 +4718,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1693,
+                      "duration": 4952,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:27.646Z",
+                      "startTime": "2025-09-16T22:45:01.328Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4482,14 +4763,16 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 17,
+                      "workerIndex": 19,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1525,
+                      "duration": 5418,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:27.649Z",
+                      "startTime": "2025-09-16T22:45:01.652Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
@@ -4524,7 +4807,7 @@
       "specs": [
         {
           "title": "@Regression tc #3 - Contact us",
-          "ok": true,
+          "ok": false,
           "tags": [
             "Regression"
           ],
@@ -4538,35 +4821,47 @@
               "results": [
                 {
                   "workerIndex": 15,
-                  "status": "passed",
-                  "duration": 2386,
-                  "errors": [],
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30493,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
+                        "column": 38,
+                        "line": 44
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Contact us' })\u001b[22m\n\n\n\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:44\n\n\u001b[0m \u001b[90m 42 |\u001b[39m     }\n \u001b[90m 43 |\u001b[39m     \u001b[36masync\u001b[39m openContactUsPage(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcontactUs_linkTxt\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m     }\n \u001b[90m 46 |\u001b[39m     \u001b[36masync\u001b[39m openMyAccountPage(){\n \u001b[90m 47 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmyAccount_linkTxt\u001b[33m.\u001b[39mcheck()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at NopHomePage.openContactUsPage (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:44:38)\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/ContactUs.spec.ts:22:23\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/ContactUs.spec.ts:21:14\u001b[22m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
                       "title": "Navigate to contact us page",
-                      "duration": 549
-                    },
-                    {
-                      "title": "Enter email",
-                      "duration": 10
-                    },
-                    {
-                      "title": "Enter enquiry",
-                      "duration": 6
-                    },
-                    {
-                      "title": "Click on submit button",
-                      "duration": 569
-                    },
-                    {
-                      "title": "Validate the success message",
-                      "duration": 63
+                      "duration": 22460,
+                      "error": {
+                        "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Contact us' })\u001b[22m\n",
+                        "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Contact us' })\u001b[22m\n\n    at NopHomePage.openContactUsPage (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:44:38)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/ContactUs.spec.ts:22:23\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/ContactUs.spec.ts:21:14",
+                        "location": {
+                          "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
+                          "column": 38,
+                          "line": 44
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:44\n\n\u001b[0m \u001b[90m 42 |\u001b[39m     }\n \u001b[90m 43 |\u001b[39m     \u001b[36masync\u001b[39m openContactUsPage(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcontactUs_linkTxt\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m     }\n \u001b[90m 46 |\u001b[39m     \u001b[36masync\u001b[39m openMyAccountPage(){\n \u001b[90m 47 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmyAccount_linkTxt\u001b[33m.\u001b[39mcheck()\u001b[33m;\u001b[39m\u001b[0m"
+                      }
                     }
                   ],
-                  "startTime": "2024-11-23T16:21:28.153Z",
+                  "startTime": "2025-09-16T22:45:06.411Z",
+                  "annotations": [],
                   "attachments": [
                     {
                       "name": "allure-metadata.json",
@@ -4599,6 +4894,11 @@
                       "body": "eyJsYWJlbHMiOlt7Im5hbWUiOiJzZXZlcml0eSIsInZhbHVlIjoiQ3JpdGljYWwifV19"
                     },
                     {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-Cont-9ba24-egression-tc-3---Contact-us-Chrome/test-failed-1.png"
+                    },
+                    {
                       "name": "video",
                       "contentType": "video/webm",
                       "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-Cont-9ba24-egression-tc-3---Contact-us-Chrome/video.webm"
@@ -4611,7 +4911,7 @@
                   ]
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "bd908a85e6fbe2827b11-262f359be766a05af5a7",
@@ -4650,19 +4950,17 @@
                   "results": [
                     {
                       "workerIndex": 18,
-                      "status": "failed",
-                      "duration": 12770,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 30642,
                       "error": {
-                        "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n",
-                        "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/ProductDetails.spec.ts:21:25\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/ProductDetails.spec.ts:20:16",
-                        "location": {
-                          "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
-                          "column": 31,
-                          "line": 50
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:50\n\n\u001b[0m \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     }\n \u001b[90m 52 |\u001b[39m     \u001b[36masync\u001b[39m searchForProduct(productName\u001b[33m:\u001b[39mstring){\n \u001b[90m 53 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearch_txtField\u001b[33m.\u001b[39mfill(productName)\u001b[33m;\u001b[39m\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
                         {
                           "location": {
                             "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
@@ -4678,7 +4976,7 @@
                       "steps": [
                         {
                           "title": "LogOut",
-                          "duration": 10770,
+                          "duration": 24778,
                           "error": {
                             "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n",
                             "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/ProductDetails.spec.ts:21:25\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/ProductDetails.spec.ts:20:16",
@@ -4691,7 +4989,8 @@
                           }
                         }
                       ],
-                      "startTime": "2024-11-23T16:21:30.270Z",
+                      "startTime": "2025-09-16T22:45:09.324Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -4724,6 +5023,11 @@
                           "body": "eyJsYWJlbHMiOlt7Im5hbWUiOiJzZXZlcml0eSIsInZhbHVlIjoiQ3JpdGljYWwifV19"
                         },
                         {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-Prod-135de-est-can-add-product-to-cart-Chrome/test-failed-1.png"
+                        },
+                        {
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-Prod-135de-est-can-add-product-to-cart-Chrome/video.webm"
@@ -4733,12 +5037,7 @@
                           "contentType": "application/zip",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-Prod-135de-est-can-add-product-to-cart-Chrome/trace.zip"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
-                        "column": 31,
-                        "line": 50
-                      }
+                      ]
                     }
                   ],
                   "status": "unexpected"
@@ -4781,27 +5080,25 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 17,
-                      "status": "failed",
-                      "duration": 16423,
+                      "workerIndex": 19,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30633,
                       "error": {
-                        "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n",
-                        "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:25:25\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:24:16",
-                        "location": {
-                          "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
-                          "column": 31,
-                          "line": 50
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:50\n\n\u001b[0m \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     }\n \u001b[90m 52 |\u001b[39m     \u001b[36masync\u001b[39m searchForProduct(productName\u001b[33m:\u001b[39mstring){\n \u001b[90m 53 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearch_txtField\u001b[33m.\u001b[39mfill(productName)\u001b[33m;\u001b[39m\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
                         {
                           "location": {
                             "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
                             "column": 31,
                             "line": 50
                           },
-                          "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n\n\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:50\n\n\u001b[0m \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     }\n \u001b[90m 52 |\u001b[39m     \u001b[36masync\u001b[39m searchForProduct(productName\u001b[33m:\u001b[39mstring){\n \u001b[90m 53 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearch_txtField\u001b[33m.\u001b[39mfill(productName)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:25:25\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:24:16\u001b[22m"
+                          "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n\n\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:50\n\n\u001b[0m \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     }\n \u001b[90m 52 |\u001b[39m     \u001b[36masync\u001b[39m searchForProduct(productName\u001b[33m:\u001b[39mstring){\n \u001b[90m 53 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearch_txtField\u001b[33m.\u001b[39mfill(productName)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:29:25\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:28:16\u001b[22m"
                         }
                       ],
                       "stdout": [],
@@ -4810,10 +5107,10 @@
                       "steps": [
                         {
                           "title": "Log Out",
-                          "duration": 13663,
+                          "duration": 26728,
                           "error": {
                             "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n",
-                            "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:25:25\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:24:16",
+                            "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:29:25\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:28:16",
                             "location": {
                               "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
                               "column": 31,
@@ -4823,7 +5120,8 @@
                           }
                         }
                       ],
-                      "startTime": "2024-11-23T16:21:29.260Z",
+                      "startTime": "2025-09-16T22:45:09.279Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -4866,6 +5164,11 @@
                           "body": "eyJsaW5rcyI6W3sidXJsIjoiaHR0cHM6Ly90cmVsbG8uY29tLyIsIm5hbWUiOiIzMjEiLCJ0eXBlIjoiaXNzdWUifV19"
                         },
                         {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-User-bca65-Register-with-required-data-Chrome/test-failed-1.png"
+                        },
+                        {
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-User-bca65-Register-with-required-data-Chrome/video.webm"
@@ -4875,12 +5178,7 @@
                           "contentType": "application/zip",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-User-bca65-Register-with-required-data-Chrome/trace.zip"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
-                        "column": 31,
-                        "line": 50
-                      }
+                      ]
                     }
                   ],
                   "status": "unexpected"
@@ -4906,27 +5204,25 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 16,
-                      "status": "failed",
-                      "duration": 15678,
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 30895,
                       "error": {
-                        "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n",
-                        "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:62:25\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:61:16",
-                        "location": {
-                          "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
-                          "column": 31,
-                          "line": 50
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:50\n\n\u001b[0m \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     }\n \u001b[90m 52 |\u001b[39m     \u001b[36masync\u001b[39m searchForProduct(productName\u001b[33m:\u001b[39mstring){\n \u001b[90m 53 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearch_txtField\u001b[33m.\u001b[39mfill(productName)\u001b[33m;\u001b[39m\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
                         {
                           "location": {
                             "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
                             "column": 31,
                             "line": 50
                           },
-                          "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n\n\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:50\n\n\u001b[0m \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     }\n \u001b[90m 52 |\u001b[39m     \u001b[36masync\u001b[39m searchForProduct(productName\u001b[33m:\u001b[39mstring){\n \u001b[90m 53 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearch_txtField\u001b[33m.\u001b[39mfill(productName)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:62:25\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:61:16\u001b[22m"
+                          "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n\n\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:50\n\n\u001b[0m \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     }\n \u001b[90m 52 |\u001b[39m     \u001b[36masync\u001b[39m searchForProduct(productName\u001b[33m:\u001b[39mstring){\n \u001b[90m 53 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearch_txtField\u001b[33m.\u001b[39mfill(productName)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:70:25\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:69:16\u001b[22m"
                         }
                       ],
                       "stdout": [],
@@ -4935,10 +5231,10 @@
                       "steps": [
                         {
                           "title": "Log Out",
-                          "duration": 12907,
+                          "duration": 24793,
                           "error": {
                             "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n",
-                            "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:62:25\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:61:16",
+                            "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-logout')\u001b[22m\n\n    at NopHomePage.clickOnLogout (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:50:31)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:70:25\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:69:16",
                             "location": {
                               "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
                               "column": 31,
@@ -4948,7 +5244,8 @@
                           }
                         }
                       ],
-                      "startTime": "2024-11-23T16:21:29.453Z",
+                      "startTime": "2025-09-16T22:45:09.082Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -4991,6 +5288,11 @@
                           "body": "eyJsaW5rcyI6W3sidXJsIjoiaHR0cHM6Ly90cmVsbG8uY29tLyIsIm5hbWUiOiIzMjEiLCJ0eXBlIjoiaXNzdWUifV19"
                         },
                         {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-User-efc9d--can-Register-with-all-data-Chrome/test-failed-1.png"
+                        },
+                        {
                           "name": "video",
                           "contentType": "video/webm",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-User-efc9d--can-Register-with-all-data-Chrome/video.webm"
@@ -5000,12 +5302,7 @@
                           "contentType": "application/zip",
                           "path": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/reports/test-artifacts/tests-e2e-nopCommerce-User-efc9d--can-Register-with-all-data-Chrome/trace.zip"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
-                        "column": 31,
-                        "line": 50
-                      }
+                      ]
                     }
                   ],
                   "status": "unexpected"
@@ -5013,7 +5310,7 @@
               ],
               "id": "39197b88a2a0b041af25-aecd7a8c6c8c9928f978",
               "file": "tests/e2e/nopCommerce/UsersModule.spec.ts",
-              "line": 52,
+              "line": 56,
               "column": 7
             }
           ]
@@ -5021,7 +5318,7 @@
         {
           "title": "Change password Test Cases",
           "file": "tests/e2e/nopCommerce/UsersModule.spec.ts",
-          "line": 80,
+          "line": 88,
           "column": 6,
           "specs": [
             {
@@ -5039,12 +5336,13 @@
                   "projectName": "Chrome",
                   "results": [
                     {
-                      "workerIndex": 15,
+                      "workerIndex": 20,
+                      "parallelIndex": 1,
                       "status": "failed",
-                      "duration": 2268,
+                      "duration": 4582,
                       "error": {
                         "message": "Error: locator.check: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-account')\u001b[22m\n",
-                        "stack": "Error: locator.check: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-account')\u001b[22m\n\n    at NopHomePage.openMyAccountPage (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:47:38)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:90:17",
+                        "stack": "Error: locator.check: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-account')\u001b[22m\n\n    at NopHomePage.openMyAccountPage (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:47:38)\n    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:101:17",
                         "location": {
                           "file": "/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts",
                           "column": 38,
@@ -5059,16 +5357,17 @@
                             "column": 38,
                             "line": 47
                           },
-                          "message": "Error: locator.check: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-account')\u001b[22m\n\n\n\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:47\n\n\u001b[0m \u001b[90m 45 |\u001b[39m     }\n \u001b[90m 46 |\u001b[39m     \u001b[36masync\u001b[39m openMyAccountPage(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmyAccount_linkTxt\u001b[33m.\u001b[39mcheck()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n \u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at NopHomePage.openMyAccountPage (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:47:38)\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:90:17\u001b[22m"
+                          "message": "Error: locator.check: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('a.ico-account')\u001b[22m\n\n\n\u001b[90m   at \u001b[39msrc/pages/nopCommerce/nopHomePage.ts:47\n\n\u001b[0m \u001b[90m 45 |\u001b[39m     }\n \u001b[90m 46 |\u001b[39m     \u001b[36masync\u001b[39m openMyAccountPage(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmyAccount_linkTxt\u001b[33m.\u001b[39mcheck()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m     }\n \u001b[90m 49 |\u001b[39m     \u001b[36masync\u001b[39m clickOnLogout() {\n \u001b[90m 50 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogout_btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at NopHomePage.openMyAccountPage (/Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/src/pages/nopCommerce/nopHomePage.ts:47:38)\u001b[22m\n\u001b[2m    at /Users/ismailelshafeiy/Projects/Playwright/TestAutomation_using_Playwright/TestAutomation_using_Playwright/tests/e2e/nopCommerce/UsersModule.spec.ts:101:17\u001b[22m"
                         },
                         {
-                          "message": "Error: Target page, context or browser has been closed"
+                          "message": "Error: browserContext.close: Target page, context or browser has been closed"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-23T16:21:30.597Z",
+                      "startTime": "2025-09-16T22:45:59.573Z",
+                      "annotations": [],
                       "attachments": [
                         {
                           "name": "allure-metadata.json",
@@ -5128,7 +5427,7 @@
               ],
               "id": "39197b88a2a0b041af25-ee4a72a1bd928f00577c",
               "file": "tests/e2e/nopCommerce/UsersModule.spec.ts",
-              "line": 81,
+              "line": 89,
               "column": 7
             }
           ]
@@ -5138,11 +5437,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-11-23T16:19:46.019Z",
-    "duration": 120067.421,
-    "expected": 64,
+    "startTime": "2025-09-16T22:42:22.043Z",
+    "duration": 528859.596,
+    "expected": 62,
     "skipped": 2,
-    "unexpected": 19,
+    "unexpected": 21,
     "flaky": 0
   }
 }
