@@ -62,7 +62,7 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: testConfig[process.env.ENV],
     testIdAttribute: 'data-testid',
-    headless: true,
+    headless: false,
     viewport: { width: 1500, height: 800 },
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
@@ -72,7 +72,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
   reporter: [
-    ['@reportportal/agent-js-playwright', RPconfig],
+   // ['@reportportal/agent-js-playwright', RPconfig],
     [`./src/lib/CustomReporter.ts`],
     ['list'],
     [

@@ -3593,3 +3593,21 @@
 {"level":"info","message":" Test Case Completed : [ @Smoke tc #2 - Verify that the user can Register with all data ] => Status : [ timedOut ] "}
 {"level":"info","message":"==================================================================================================="}
 {"level":"info","message":" Test Run Completed ;) "}
+{"level":"info","message":"==================================================================================================="}
+{"level":"info","message":" Test Case Started : [ Working with dropdown ] "}
+{"level":"info","message":" Test Case Completed : [ Working with dropdown ] => Status : [ passed ] "}
+{"level":"info","message":"==================================================================================================="}
+{"level":"info","message":" Test Run Completed ;) "}
+{"level":"info","message":"==================================================================================================="}
+{"level":"info","message":" Test Case Started : [ Working with dropdown ] "}
+{"level":"info","message":" Test Case Completed : [ Working with dropdown ] => Status : [ passed ] "}
+{"level":"info","message":"==================================================================================================="}
+{"level":"info","message":" Test Run Completed ;) "}
+{"level":"info","message":"==================================================================================================="}
+{"level":"info","message":" Test Case Started : [ @Smoke Story #1 - Validate Page Components ] "}
+{"level":"info","message":" Executing Step : [ When I navigate to Google homepage ] "}
+{"level":"info","message":" Executing Step : [ Then the Page Title should be \"Google\" ] "}
+{"level":"info","message":" Executing Step : [ And the Google logo should be displayed ] "}
+{"level":"info","message":" Test Case Completed : [ @Smoke Story #1 - Validate Page Components ] => Status : [ failed ] "}
+{"level":"info","message":"==================================================================================================="}
+{"level":"info","message":" Test Run Completed ;) "}
