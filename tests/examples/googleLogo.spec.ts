@@ -6,7 +6,7 @@ import { allure } from "allure-playwright";
 // context is a window object
 // provide page and context to the test to be isolated
 
-test.describe("Playwright website", () => {
+test.describe("Playwright website",{ tag: '@examples' }, () => {
   test("@Smoke Story #1 - Validate Page Components", async ({ googleHomePage }) => {
     allure.feature("Google POC Feature");
     allure.description(

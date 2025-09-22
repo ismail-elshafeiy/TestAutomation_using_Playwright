@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("Example to demonstrate text input and basic assertions", async ({ page }) => {
+test("Example to demonstrate text input and basic assertions",{ tag: '@examples' }, async ({ page }) => {
   await page.goto("https://the-internet.herokuapp.com/login");
   await expect(page.locator("#username")).toBeVisible({ timeout: 2000 });
   await page.fill("#username", "tomsmith");

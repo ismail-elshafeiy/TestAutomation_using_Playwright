@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 // https://playwright.dev/docs/input#select-options
-test.describe('Example to demonstrate execution dropdown methods in Playwright', () => {
+test.describe('Example to demonstrate execution dropdown methods in Playwright',{ tag: '@examples' }, () => {
   test('Working with dropdown', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/dropdown');
     const dropdown = await page.$('#dropdown');

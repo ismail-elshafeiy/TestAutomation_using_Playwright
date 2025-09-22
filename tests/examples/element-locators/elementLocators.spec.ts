@@ -4,7 +4,7 @@ import test, { expect } from "@playwright/test";
  * https://playwright.dev/docs/locators
  *
  */
-test.describe("To do test", () => {
+test.describe("To do test", { tag: '@examples' },() => {
   test.use({
     storageState: "storageState.json",
   });

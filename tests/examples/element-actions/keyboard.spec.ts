@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 // https://playwright.dev/docs/api/class-keyboard
-test.describe("Example to demonstrate execution keyboard methods in Playwright", () => {
+test.describe("Example to demonstrate execution keyboard methods in Playwright", { tag: '@examples' },() => {
   test("Working with keyboard", async ({ page }) => {
     // navigating to site
     await page.goto("https://the-internet.herokuapp.com/key_presses");

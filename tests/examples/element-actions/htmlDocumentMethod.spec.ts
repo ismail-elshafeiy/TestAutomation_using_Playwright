@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 // https://playwright.dev/docs/evaluating
-test.describe('Example to demonstrate execution of HTML Document methods in Playwright', () => {
+test.describe('Example to demonstrate execution of HTML Document methods in Playwright',{ tag: '@examples' }, () => {
   test('Extract innerText and assert', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/');
     var locator = await page.evaluate(() => document.querySelector('h1').innerText);

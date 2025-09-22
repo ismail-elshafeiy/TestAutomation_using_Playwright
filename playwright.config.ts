@@ -57,18 +57,7 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    actionTimeout: 0,
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: testConfig[process.env.ENV],
-    testIdAttribute: 'data-testid',
-    headless: false,
-    viewport: { width: 1500, height: 800 },
-    ignoreHTTPSErrors: true,
-    screenshot: 'only-on-failure',
-    video: `on`,
-    trace: `on`,
-  },
+
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
   reporter: [
@@ -107,7 +96,19 @@ export default defineConfig({
     ],
   ],
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: 'reports/test-artifacts/',
+  outputDir: envConfig.testArtifacts,
+  use: {
+    actionTimeout: 0,
+    /* Base URL to use in actions like `await page.goto('/')`. */
+    // baseURL: testConfig[process.env.ENV],
+    testIdAttribute: 'data-testid',
+    headless: false,
+    viewport: { width: 1400, height: 800 },
+    ignoreHTTPSErrors: true,
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    trace: `on`,
+  },
   /* Configure projects for major browsers */
   projects: [
     // {
@@ -115,10 +116,13 @@ export default defineConfig({
     //   testMatch: "global-setup.ts",
     // },
     {
-      name: `Chrome`,
+      name: `Chrome - UI`,
+      grep: /@examples/,
       use: {
         browserName: `chromium`,
         //     storageState: testConfig.ownerAuth,
+        //  baseURL: ENV,
+        // headless: false,
         channel: `chrome`,
         //Slows down execution by ms
         launchOptions: {
@@ -130,12 +134,12 @@ export default defineConfig({
     // {
     //   name: `Device`,
     //   use: {
-    //     // ...devices[`Pixel 4a (5G)`],
+    // ...devices[`Pixel 4a (5G)`],
     //     ...devices[`iPhone 11 Pro Max`],
     //     browserName: `chromium`,
     //     storageState: testConfig.ownerAuth,
     //     channel: `chrome`,
-    //     //Slows down execution by ms
+    //Slows down execution by ms
     //     launchOptions: {
     //       slowMo: 0
     //     }
@@ -145,12 +149,12 @@ export default defineConfig({
     // {
     //   name: `Chrome`,
     //   use: {
-    //     // Configure the browser to use.
+    // Configure the browser to use.
     //     browserName: `chromium`,
     //     storageState: testConfig.adminAuth,
-    //     //Chrome Browser Config
+    //Chrome Browser Config
     //     channel: `chrome`,
-    //     //Slows down execution by ms
+    //Slows down execution by ms
     //     launchOptions: {
     //       slowMo: 0
     //     }

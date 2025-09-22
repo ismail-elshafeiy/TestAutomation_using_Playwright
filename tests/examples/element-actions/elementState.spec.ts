@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 // https://playwright.dev/docs/actionability
 // https://playwright.dev/docs/api/class-elementhandle#element-handle-wait-for-element-state
-test.describe("Example to demonstrate execution element state methods in Playwright", () => {
+test.describe("Example to demonstrate execution element state methods in Playwright",{ tag: '@examples' }, () => {
   test("Working with element state", async ({ page }) => {
     await page.goto("https://demoqa.com/automation-practice-form");
     // element handles

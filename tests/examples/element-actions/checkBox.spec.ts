@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 //https://playwright.dev/docs/input#checkboxes-and-radio-buttons
-test.describe('Example to demonstrate execution checkbox methods in Playwright', () => {
+test.describe('Example to demonstrate execution checkbox methods in Playwright', { tag: '@examples' }, () => {
   test('Working with Checkboxes 1', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/checkboxes');
     //Assert that the checkboxes are visible on the webpage

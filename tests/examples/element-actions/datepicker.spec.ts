@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Example to demonstrate execution of datepicker in Playwright', () => {
+test.describe('Example to demonstrate execution of datepicker in Playwright',{ tag: '@examples' }, () => {
     test('Date picker 1', async ({ page }) => { 
         const day = 10;
         await page.goto('https://demo.automationtesting.in/Datepicker.html');

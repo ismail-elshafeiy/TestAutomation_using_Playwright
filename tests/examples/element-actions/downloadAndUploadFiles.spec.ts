@@ -8,7 +8,7 @@ const downloadFiles = envConfig.downloadFiles;
 const fs = require('fs');
 const uploadFilePath = 'tests/data/upload/';
 
-test.describe('Example to demonstrate execution Upload and Download single file methods in Playwright', () => {
+test.describe('Example to demonstrate execution Upload and Download single file methods in Playwright',{ tag: '@examples' }, () => {
   const fileName = 'Screenshot.png';
   test('Upload a Single file and assert', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/upload');
@@ -54,7 +54,7 @@ test.describe('Example to demonstrate execution Upload and Download multiple fil
   });
 });
 
-test.describe('Example to demonstrate execution Upload and remove multipe file methods in Playwright', () => {
+test.describe('Example to demonstrate execution Upload and remove multipe file methods in Playwright',{ tag: '@examples' }, () => {
   const fileName1 = 'example.json';
   const fileName2 = 'Screenshot.png';
   const fileName3 = 'github.png';

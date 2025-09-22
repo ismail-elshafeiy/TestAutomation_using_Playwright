@@ -17,7 +17,7 @@ test.afterEach(async ({ page }) => {
 //     // topMenuPage = new TopMenuPage(page);
 // }
 
-test.describe("Playwright website", () => {
+test.describe("Playwright website",{ tag: '@examples' }, () => {
   test("has title", async ({ homePage }) => {
     await homePage.assertPageTitle();
   });

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 // https://playwright.dev/docs/api/class-mouse
-test.describe("Example to demonstrate execution mouse methods in Playwright", () => {
+test.describe("Example to demonstrate execution mouse methods in Playwright",{ tag: '@examples' }, () => {
   test("Working with mouse", async ({ page }) => {
     await page.goto("https://paint.js.org/");
     // drawing a square

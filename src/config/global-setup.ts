@@ -5,7 +5,7 @@ import { RegisterPage } from '@pages/nopCommerce/registerPage';
 import { LoginPage } from '@pages/nopCommerce/loginPage';
 import { FakerData } from '@lib/FakerData';
 import { rimraf } from 'rimraf';
-import { testConfig } from './envConfig';
+import envConfig from '../constants/envConfig';
 
 async function globalSetup(): Promise<void> {
   await new Promise((resolve) => {
@@ -34,7 +34,7 @@ setup('Register by Owner', async ({ page, context }) => {
   await registerPage.validateSuccessMessage('Your registration completed');
   await nopHomePage.openLoginPage();
   await loginPage.doLogin(email, password);
-  await page.context().storageState({ path: testConfig.ownerAuth });
+  await page.context().storageState({ path: envConfig.ownerAuth });
 });
 // setup('Register by Admin', async ({ page, context }) => {
 //     allure.owner('Ismail elshafeiy');
@@ -56,6 +56,6 @@ setup('Register by Owner', async ({ page, context }) => {
 //     await registerPage.validateSuccessMessage('Your registration completed');
 //     await nopHomePage.openLoginPage();
 //     await loginPage.doLogin(email, password);
-//     await page.context().storageState({ path: testConfig.adminAuth });
+//     await page.context().storageState({ path: envConfig.adminAuth });
 // })
 export default globalSetup;

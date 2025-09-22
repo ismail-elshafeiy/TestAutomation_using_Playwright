@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 //https://playwright.dev/docs/frames
 
-test.describe("Example to demonstrate testing of simple and nested iframes in Playwright", () => {
+test.describe("Example to demonstrate testing of simple and nested iframes in Playwright",{ tag: '@examples' }, () => {
   test("Simple iframe - Input text in the text editor which is inside an iframe", async ({ page }) => {
     await page.goto("http://the-internet.herokuapp.com/iframe");
     const frame = await page.frameLocator("#mce_0_ifr");
