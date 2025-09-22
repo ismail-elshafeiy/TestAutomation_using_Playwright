@@ -1,10 +1,11 @@
-import fs from "fs";
-import * as CryptoJS from "crypto-js";
-import type { Page } from "@playwright/test";
-import { BrowserContext, expect } from "@playwright/test";
+import fs from 'fs';
+import * as CryptoJS from 'crypto-js';
+import { parse } from 'csv-parse/sync';
+import type { Page } from '@playwright/test';
+import { BrowserContext, expect } from '@playwright/test';
 
-import * as pdfjslib from "pdfjs-dist-es5";
-import { Logger, loggers } from "winston";
+import * as pdfjslib from 'pdfjs-dist-es5';
+import { Logger, loggers } from 'winston';
 
 export class FileActions {
   readonly page: Page;
@@ -28,7 +29,7 @@ export class FileActions {
   async getPdfPageText(pdf: any, pageNo: number) {
     const page = await pdf.getPage(pageNo);
     const tokenizedText = await page.getTextContent();
-    const pageText = tokenizedText.items.map((token: any) => token.str).join("");
+    const pageText = tokenizedText.items.map((token: any) => token.str).join('');
     return pageText;
   }
 
@@ -41,6 +42,13 @@ export class FileActions {
       pageTextPromises.push(this.getPdfPageText(pdf, pageNo));
     }
     const pageTexts = await Promise.all(pageTextPromises);
-    return pageTexts.join(" ");
+    return pageTexts.join(' ');
   }
+}
+export async function readCsvFile(filePath: string) {
+  const fileContent = fs.readFileSync(filePath, 'utf-8'); // Read the file synchronously
+  return parse(fileContent, {
+    columns: true, // Treat the first row as headers
+    skip_empty_lines: true, // Skip any empty rows
+  });
 }

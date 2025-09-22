@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { testConfig } from 'config';
-const downloadFiles = testConfig.downloadFiles;
+import envConfig from 'src/constants/envConfig';
+const downloadFiles = envConfig.downloadFiles;
 
 // https://playwright.dev/docs/downloads
 // https://playwright.dev/docs/input#upload-files

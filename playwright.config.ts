@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { testConfig } from './config';
+import envConfig from 'src/constants/envConfig';
 
 const RPconfig = {
   apiKey: 'myKey_K4xCMQuGQkaYCQvAXZePoABVBg4aWz9VIQIY3OSZID4-w_KZHlS-pI8gE7oGPjIR',
@@ -72,21 +72,21 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
   reporter: [
-   // ['@reportportal/agent-js-playwright', RPconfig],
-    [`./src/lib/CustomReporter.ts`],
+    // ['@reportportal/agent-js-playwright', RPconfig],
+    [envConfig.customReporter],
     ['list'],
     [
       'html',
       {
         open: 'always',
-        outputFolder: 'reports/playwright-report',
+        outputFolder: envConfig.playWrightReport,
       },
     ],
     [
       'allure-playwright',
       {
         open: 'always',
-        outputFolder: 'reports/allure-results',
+        outputFolder: envConfig.allureResults,
         detail: true,
         suiteTitle: false,
         disableWebdriverStepsReporting: true,
@@ -95,14 +95,14 @@ export default defineConfig({
     [
       'json',
       {
-        outputFile: 'reports/json-report/test-results.json',
+        outputFile: envConfig.testResultJson,
       },
     ],
     [
       'monocart-reporter',
       {
         name: 'Playwright Test Report',
-        outputFile: 'reports/monocart-report/report.html',
+        outputFile: envConfig.monocartReport,
       },
     ],
   ],
