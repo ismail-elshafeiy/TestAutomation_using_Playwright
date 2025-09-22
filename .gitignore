@@ -4,7 +4,6 @@ test-results/
 playwright-report/
 playwright/.cache/
 allure-results/
-reports/allure-results/
-reports/json-report
+reports/
 storageState.json
 /playwright-report.zip
