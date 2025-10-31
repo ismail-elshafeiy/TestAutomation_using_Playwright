@@ -64,7 +64,7 @@ async function getRowIndex(rowName: string): Promise<number> {
     }
   });
   if (!rowIndex) {
-    throw new Error(`Row ${rowName} not found in ${this.sheet}`);
+    throw new Error(`Row ${rowName} not found in ${sheet.name}`);
   }
   return rowIndex;
 }
@@ -78,7 +78,7 @@ async function getColumnIndex(colName: string): Promise<number> {
     }
   });
   if (!colIndex) {
-    throw new Error(`Column ${colName} not found in ${this.sheet}`);
+    throw new Error(`Column ${colName} not found in ${sheet.name}`);
   }
   return colIndex;
 }
