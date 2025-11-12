@@ -1,19 +1,19 @@
-import { test as baseClass } from "@playwright/test";
-import { WebActions } from "@lib/WebActions";
-import { FileActions } from "@lib/FileActions";
-import { FakerData } from "@lib/FakerData";
-import { DBActions } from "./DBActions";
-import { GoogleHomePage } from "@pages/google/googleHomePage";
-import { ResultsPage } from "@pages/google/resultsPage";
-import { HomePage } from "@pages/examples/homePage";
-import { TopMenuPage } from "@pages/examples/topMenuPage";
+import { test as baseClass } from '@playwright/test';
+import { WebActions } from '@lib/WebActions';
+import { FileActions } from '@lib/data-driven/FileActions';
+import { FakerData } from '@lib/data-driven/FakerData';
+import { DBActions } from './actions/DBActions';
+import { GoogleHomePage } from '@pages/google/googleHomePage';
+import { ResultsPage } from '@pages/google/resultsPage';
+import { HomePage } from '@pages/examples/homePage';
+import { TopMenuPage } from '@pages/examples/topMenuPage';
 
-import { NopHomePage } from "@pages/nopCommerce/nopHomePage";
-import { RegisterPage } from "@pages/nopCommerce/registerPage";
-import { LoginPage } from "@pages/nopCommerce/loginPage";
-import { MyAccountPage } from "@pages/nopCommerce/myAccount";
-import { ContactUsPage } from "@pages/nopCommerce/contactUsPage";
-import { ProductDetailsPage } from "@pages/nopCommerce/productDetails";
+import { NopHomePage } from '@pages/nopCommerce/nopHomePage';
+import { RegisterPage } from '@pages/nopCommerce/registerPage';
+import { LoginPage } from '@pages/nopCommerce/loginPage';
+import { MyAccountPage } from '@pages/nopCommerce/myAccount';
+import { ContactUsPage } from '@pages/nopCommerce/contactUsPage';
+import { ProductDetailsPage } from '@pages/nopCommerce/productDetails';
 
 /*
  This is the base class for all tests. It is used to extend the classes will be use in all project

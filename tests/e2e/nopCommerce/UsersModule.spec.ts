@@ -1,6 +1,6 @@
 import test from '@lib/BaseFixtures';
 import { allure } from 'allure-playwright';
-import envConfig from 'src/constants/envConfig';
+import envConfig from 'src/constants/env';
 
 const testUrl = envConfig.testUrl;
 const issueUrl = envConfig.issueUrl;

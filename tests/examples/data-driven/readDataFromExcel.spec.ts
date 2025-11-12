@@ -1,10 +1,11 @@
+import { logInfo } from '@lib/CustomReporter';
 import {
   getDataByIndex,
   getDataByName,
   loadExcelData,
   writeDataIntoCellByIndex,
   writeDataIntoCellByName,
-} from '@lib/ExcelFileManager';
+} from '@lib/data-driven/ExcelFileManager';
 import { test, expect } from '@playwright/test';
 test.describe(`Example to demonstrate read data from excel in Playwright @examples`, () => {
   let filePath = 'tests/data/LoginData.xlsx';
@@ -13,6 +14,9 @@ test.describe(`Example to demonstrate read data from excel in Playwright @exampl
   test(`Tc - Read data from excel by index`, async ({ page }) => {
     // let filePath = "tests/data/LoginData.xlsx";
     // await loadExcelData(filePath, "login Data2");
+    logInfo('Starting test to read data from excel by index');
+    logInfo(`File Path : ${filePath}`);
+    logInfo(`Sheet Name : ${sheetName}`);
     await page.goto('https://the-internet.herokuapp.com/login');
     await page.fill('#username', await getDataByIndex(2, 2));
     await page.fill('#password', await getDataByIndex(2, 3));

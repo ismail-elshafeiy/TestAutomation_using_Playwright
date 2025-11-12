@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import envConfig from 'src/constants/envConfig';
+import envConfig from 'src/constants/env';
 
 const RPconfig = {
   apiKey: 'myKey_K4xCMQuGQkaYCQvAXZePoABVBg4aWz9VIQIY3OSZID4-w_KZHlS-pI8gE7oGPjIR',

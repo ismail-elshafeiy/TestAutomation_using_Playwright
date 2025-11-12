@@ -1,3 +1,4 @@
+import env from '@constants/env';
 import { Page } from '@playwright/test';
 import chalk from 'chalk';
 
@@ -60,14 +61,57 @@ export async function getCurrentTime(): Promise<number> {
 
 export function generateGUID(guid: string): string | undefined {
   if (guid === 'guid') {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
-      /[xy]/g,
-      function (c) {
-        const r = (Math.random() * 16) | 0,
-          v = c == 'x' ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-      },
-    );
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      const r = (Math.random() * 16) | 0,
+        v = c == 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
   }
   return undefined; // Return undefined if guid is not 'guid'
+}
+export const color = {
+  success: chalk.bold.hex('#0EF15D'),
+  error: chalk.bold.hex('#E4271B'),
+  warning: chalk.bold.hex('#FFA500'),
+  info: chalk.hex('#A020F0'),
+  outgoingRequest: chalk.hex('#0560fc'),
+  incomingRequest: chalk.hex('#fcf805'),
+  request: chalk.hex('#0560fc'),
+  response: chalk.hex('#fcf805'),
+};
+
+export async function logger(page: Page) {
+  page.on('request', (request) => console.log(color.outgoingRequest('>>', request.method(), request.url())));
+  page.on('response', (response) => console.log(color.incomingRequest('<<', response.status(), response.url())));
+  page.on('console', (msg) => {
+    if (msg.type() == 'error') {
+      console.log(color.error(msg.text));
+    }
+  });
+}
+export async function getBaseURL(isApis: boolean): Promise<string> {
+  const envSelected = env.env;
+  if (isApis) {
+    switch (envSelected) {
+      case 'dev':
+        return env.devApi;
+      case 'qa':
+        return env.qaApi;
+      case 'prod':
+        return env.prodApi;
+      default:
+        throw new Error(`Unknown environment: ${envSelected}`);
+    }
+  } else {
+    switch (envSelected) {
+      case 'dev':
+        return env.dev;
+      case 'qa':
+        return env.qa;
+      case 'prod':
+        return env.prod;
+      default:
+        throw new Error(`Unknown environment: ${envSelected}`);
+    }
+  }
 }

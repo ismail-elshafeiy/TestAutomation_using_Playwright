@@ -3,9 +3,9 @@ import { allure } from 'allure-playwright';
 import { NopHomePage } from '@pages/nopCommerce/nopHomePage';
 import { RegisterPage } from '@pages/nopCommerce/registerPage';
 import { LoginPage } from '@pages/nopCommerce/loginPage';
-import { FakerData } from '@lib/FakerData';
+import { FakerData } from '@lib/data-driven/FakerData';
 import { rimraf } from 'rimraf';
-import envConfig from '../constants/envConfig';
+import envConfig from '../constants/env';
 
 async function globalSetup(): Promise<void> {
   await new Promise((resolve) => {
