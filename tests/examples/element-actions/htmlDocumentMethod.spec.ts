@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Example to demonstrate execution of HTML Document methods in Playwright',{ tag: '@examples' }, () => {
   test('Extract innerText and assert', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/');
-    var locator = await page.evaluate(() => document.querySelector('h1').innerText);
+    var locator = await page.evaluate(() => document.querySelector('h1')?.innerText);
     await expect(locator).toEqual('Welcome to the-internet');
   });
 
@@ -39,7 +39,7 @@ test.describe('Example to demonstrate execution of HTML Document methods in Play
 
   test('Get the Tag Name and assert', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/login');
-    var tagName = await page.evaluate(() => document.getElementById('username').tagName);
+    var tagName = await page.evaluate(() => document.getElementById('username')?.tagName);
     await expect(tagName).toEqual('INPUT');
   });
 });

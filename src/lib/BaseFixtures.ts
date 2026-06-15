@@ -3,17 +3,17 @@ import { WebActions } from '@lib/WebActions';
 import { FileActions } from '@lib/data-driven/FileActions';
 import { FakerData } from '@lib/data-driven/FakerData';
 import { DBActions } from './actions/DBActions';
-import { GoogleHomePage } from '@pages/google/googleHomePage';
-import { ResultsPage } from '@pages/google/resultsPage';
-import { HomePage } from '@pages/examples/homePage';
-import { TopMenuPage } from '@pages/examples/topMenuPage';
+import { GoogleHomePage } from '@features/google/googleHomePage';
+import { ResultsPage } from '@features/google/resultsPage';
+import { HomePage } from '@features/examples/homePage';
+import { TopMenuPage } from '@features/examples/topMenuPage';
 
-import { NopHomePage } from '@pages/nopCommerce/nopHomePage';
-import { RegisterPage } from '@pages/nopCommerce/registerPage';
-import { LoginPage } from '@pages/nopCommerce/loginPage';
-import { MyAccountPage } from '@pages/nopCommerce/myAccount';
-import { ContactUsPage } from '@pages/nopCommerce/contactUsPage';
-import { ProductDetailsPage } from '@pages/nopCommerce/productDetails';
+import { NopHomePage } from '@features/nopCommerce/nopHomePage';
+import { RegisterPage } from '@features/nopCommerce/registerPage';
+import { LoginPage } from '@features/nopCommerce/loginPage';
+import { MyAccountPage } from '@features/nopCommerce/myAccount';
+import { ContactUsPage } from '@features/nopCommerce/contactUsPage';
+import { ProductDetailsPage } from '@features/nopCommerce/productDetails';
 
 /*
  This is the base class for all tests. It is used to extend the classes will be use in all project

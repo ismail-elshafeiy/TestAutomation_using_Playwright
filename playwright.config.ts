@@ -117,7 +117,6 @@ export default defineConfig({
     // },
     {
       name: `Chrome - UI`,
-      grep: /@examples/,
       use: {
         browserName: `chromium`,
         //     storageState: testConfig.ownerAuth,
