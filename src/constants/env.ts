@@ -16,7 +16,7 @@ export default {
   issueUrl: `https://trello.com/`,
   logsFile: `reports/logs/info.log`,
   reportFolder: `reports`,
-  allureResults: `reports/allure-results`,
+  allureResults: `allure-results`,
   monocartReport: `reports/monocart-report/report.html`,
   playWrightReport: `reports/playwright-report`,
   customReporter: `./src/lib/CustomReporter.ts`,

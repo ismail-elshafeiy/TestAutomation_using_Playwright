@@ -8,13 +8,6 @@ import { ResultsPage } from '@features/google/resultsPage';
 import { HomePage } from '@features/examples/homePage';
 import { TopMenuPage } from '@features/examples/topMenuPage';
 
-import { NopHomePage } from '@features/nopCommerce/nopHomePage';
-import { RegisterPage } from '@features/nopCommerce/registerPage';
-import { LoginPage } from '@features/nopCommerce/loginPage';
-import { MyAccountPage } from '@features/nopCommerce/myAccount';
-import { ContactUsPage } from '@features/nopCommerce/contactUsPage';
-import { ProductDetailsPage } from '@features/nopCommerce/productDetails';
-
 /*
  This is the base class for all tests. It is used to extend the classes will be use in all project
  instead of using object for each class in test class
@@ -32,12 +25,6 @@ const test = baseClass.extend<{
   resultsPage: ResultsPage;
   homePage: HomePage;
   topMenuPage: TopMenuPage;
-  nopHomePage: NopHomePage;
-  registerPage: RegisterPage;
-  loginPage: LoginPage;
-  myAccountPage: MyAccountPage;
-  contactUsPage: ContactUsPage;
-  productDetailsPage: ProductDetailsPage;
 }>({
   webActions: async ({ page, context }, use) => {
     await use(new WebActions(page, context));
@@ -62,24 +49,6 @@ const test = baseClass.extend<{
   },
   topMenuPage: async ({ page, context }, use) => {
     await use(new TopMenuPage(page, context));
-  },
-  nopHomePage: async ({ page, context }, use) => {
-    await use(new NopHomePage(page, context));
-  },
-  registerPage: async ({ page, context }, use) => {
-    await use(new RegisterPage(page, context));
-  },
-  loginPage: async ({ page, context }, use) => {
-    await use(new LoginPage(page, context));
-  },
-  myAccountPage: async ({ page, context }, use) => {
-    await use(new MyAccountPage(page, context));
-  },
-  contactUsPage: async ({ page, context }, use) => {
-    await use(new ContactUsPage(page, context));
-  },
-  productDetailsPage: async ({ page, context }, use) => {
-    await use(new ProductDetailsPage(page, context));
   },
 });
 export default test;

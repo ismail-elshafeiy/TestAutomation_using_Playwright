@@ -1,5 +1,4 @@
 import { test, expect, BrowserContext } from "@playwright/test";
-import { allure } from "allure-playwright";
 
 test.describe("Test Cookies", () => {
   test.beforeEach(async ({ page }) => {

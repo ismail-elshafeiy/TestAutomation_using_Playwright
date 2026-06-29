@@ -26,11 +26,11 @@
         "test:login": "playwright test Login.test.ts --project='Chrome - UI'",
         "test:smoke": "playwright test --grep @Smoke --workers=1 --project='Chrome - UI'",
         "test:api": "playwright test --grep @API --workers=1 --project='Chrome - UI'",
-        "clean": "rimraf reports/allure-results allure-results reports/playwright-report allure-report test-results",
+        "clean": "rimraf allure-results allure-report reports/playwright-report test-results",
         "typecheck": "tsc --noEmit",
         "pw:install": "playwright install --with-deps",
-        "allure:report": "allure serve reports/allure-results",
-        "allure:generate": "allure generate reports/allure-results --output allure-report --clean",
+        "allure:report": "allure serve allure-results",
+        "allure:generate": "allure generate allure-results --output allure-report --clean",
         "allure:open": "allure open allure-report",
         "test:reporter": "npm run clean && playwright test --headed --reporter=allure-playwright,line",
         "lighthouse": "node tests/Lighthouse.js"
@@ -66,7 +66,7 @@
         "@types/faker": "^6.6.11",
         "@types/node": "^25.9.3",
         "@wdio/cli": "^9.28.0",
-        "allure-commandline": "^2.42.1",
+        "allure-commandline": "^2.43.0",
         "allure-playwright": "^3.10.0",
         "prettier": "^3.8.4",
         "typescript": "^6.0.3"

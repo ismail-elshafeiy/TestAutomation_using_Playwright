@@ -1,6 +1,6 @@
 import test from "@lib/BaseFixtures";
 import testData from "tests/data/google.json";
-import { allure } from "allure-playwright";
+import { feature, description } from 'allure-js-commons';
 
 // page is a Playwright Page object like driver
 // context is a window object
@@ -8,8 +8,8 @@ import { allure } from "allure-playwright";
 
 test.describe("Playwright website",{ tag: '@examples' }, () => {
   test("@Smoke Story #1 - Validate Page Components", async ({ googleHomePage }) => {
-    allure.feature("Google POC Feature");
-    allure.description(
+    await feature("Google POC Feature");
+    await description(
       'When I navigate to Google homepage, Then the Page Title should be "Google", And the Google Logo should be displayed.'
     );
     await test.step("When I navigate to Google homepage", async () => {

@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { allure } from "allure-playwright";
+import { epic, feature, story, description, severity } from 'allure-js-commons';
 
 test.describe("Test naviagtions", () => {
   test.beforeEach(async ({ page }) => {
@@ -8,22 +8,22 @@ test.describe("Test naviagtions", () => {
   });
 
   test("test case #1 - Validate URL and title Page", async ({ page, context }) => {
-    allure.epic("Google Epic");
-    allure.feature("Google Feature");
-    allure.story("Google Story");
-    allure.description(
+    await epic("Google Epic");
+    await feature("Google Feature");
+    await story("Google Story");
+    await description(
       'When I navigate to Google homepage, Then the Page Title should be "Google", And the Google Logo should be displayed.'
     );
-    allure.severity("critical");
+    await severity("critical");
     await expect(page).toHaveURL("https://www.google.com/");
     await expect(page).toHaveTitle("Google");
   });
 
   test("test case #2 - Validate navigation Functionality", async ({ page, context }) => {
-    allure.epic("Google Epic");
-    allure.feature("Google Feature");
-    allure.story("Google Story");
-    allure.description(
+    await epic("Google Epic");
+    await feature("Google Feature");
+    await story("Google Story");
+    await description(
       'When I navigate to Google homepage, And search for "Microsoft Playwright", Then "Result Stats" should not be empty.'
     );
     await page.goto("https://github.com/ismail-elshafeiy");
@@ -34,10 +34,10 @@ test.describe("Test naviagtions", () => {
     expect(page).not.toHaveURL("");
   });
   test("test case #3 - Validate login Functionality", async ({ page, context }) => {
-    allure.epic("Google Epic");
-    allure.feature("Google Feature");
-    allure.story("Google Story 2");
-    allure.description(
+    await epic("Google Epic");
+    await feature("Google Feature");
+    await story("Google Story 2");
+    await description(
       'When I navigate to Google homepage, And search for "Microsoft Playwright", Then "Result Stats" should not be empty.'
     );
     await page.goto("https://demo.nopcommerce.com/");
@@ -46,10 +46,10 @@ test.describe("Test naviagtions", () => {
     expect(page).not.toHaveURL("");
   });
   test("test case #4 - Validate login Functionality", async ({ page, context }) => {
-    allure.epic("Google Epic");
-    allure.feature("Google Feature");
-    allure.story("Google Story 2");
-    allure.description(
+    await epic("Google Epic");
+    await feature("Google Feature");
+    await story("Google Story 2");
+    await description(
       'When I navigate to Google homepage, And search for "Microsoft Playwright", Then "Result Stats" should not be empty.'
     );
     await page.goto("https://demo.nopcommerce.com/");
